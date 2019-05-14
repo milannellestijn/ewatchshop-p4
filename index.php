@@ -27,28 +27,23 @@
       </div>
     </div>
 
-  <div class="row">
-    <div class="col-12">
-      <?php include("./carousel.php"); ?>
-    </div>
+    <div class="row">
+  <div class="col-12">
+    <section class="content">
+      <?php include("./navigation.php"); ?>
+    </section>
   </div>
+</div>
 
-  <div class="row">
-    <div class="col-12">
-      <?php include("./items.php"); ?>
-    </div>
-  </div>
+<div class="row">
+<div class="col-12">
+  <?php include("./footer.php"); ?>
+</section>
+</div>
+</div>
+
 
 </main>
-  <!-- /.container -->
-
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">EWATCHSHOP 2019</p>
-    </div>
-    <!-- /.container -->
-  </footer>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
