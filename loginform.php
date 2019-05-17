@@ -16,7 +16,4 @@
       <button type="submit" class="btn btn-primary btn-lg btn-block">Inloggen</button>
     </form>
   </div>
-  <div class="col-6">
-    <img src="./img/pasen.jpg" class="img-fluid rounded mx-auto d-block" alt="Responsive image" width="70%">
-  </div>
 </div>
