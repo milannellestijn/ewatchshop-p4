@@ -22,6 +22,9 @@
               echo '<li class="nav-item">
                       <a class="nav-link" href="./index.php?content=customer_home">CustomerHome<span class="sr-only">(current)</span></a>
                     </li>';
+                    '<li class="nav-item">
+                            <a class="nav-link" href="./index.php?content=contact">Contact<span class="sr-only">(current)</span></a>
+                          </li>';
           break;
             default:
               header("Location: url=./index.php?content=logout");
@@ -39,6 +42,9 @@
                 </li>';
           echo '<li class="nav-item">
                   <a class="nav-link" href="./index.php?content=loginform">Inloggen</a>
+                </li>';
+          echo  '<li class="nav-item">
+                <a class="nav-link" href="./index.php?content=contact">Contact<span class="sr-only">(current)</span></a>
                 </li>';
         }
       ?>
