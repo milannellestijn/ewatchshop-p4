@@ -5,6 +5,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
       <?php
@@ -22,6 +23,13 @@
               echo '<li class="nav-item">
                       <a class="nav-link" href="./index.php?content=customer_home">CustomerHome<span class="sr-only">(current)</span></a>
                     </li>';
+              echo '<li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" Dropdown </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+               
+                
+              </div>
+            </li>';
           break;
             default:
               header("Location: url=./index.php?content=logout");
@@ -43,5 +51,7 @@
         }
       ?>
     </ul>
+    
   </div>
+  
 </nav>
