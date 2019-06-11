@@ -1,7 +1,4 @@
-<?php
-  $userrole = ['administrator'];
-  include("./security.php");
-?>
+
 
 <?php
   $server = "localhost";
