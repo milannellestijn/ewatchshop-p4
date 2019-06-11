@@ -26,8 +26,6 @@ $result = mysqli_query($conn, $sql);
             <th scope="col">id</th>
             <th scope="col">Email</th>
             <th scope="col">Role</th>
-            <th scope="col">Keuzen1</th>
-            <th scope="col">Keuzen2</th>
 
 
             </tr>
@@ -41,19 +39,17 @@ $result = mysqli_query($conn, $sql);
                         echo "<tr><th scope = 'row'>" . $record["id"] . "</th>" .
                      "<td>" . $record["email"] . "</td>" .
                      "<td>" . $record["userrole"] . "</td>" .
-                     "<td>" . $record["keuzen1"] . "</td>" .
-                     "<td>" . $record["keuzen2"] . "</td>" .
 
 
 
                     "<td>
                         <a href='./update.php?id=". $record["id"] ."'>
-                        <img src='./img/b_edit.png' alt='edit' style='width: 20px; height: 20px;'>
+                        <img src='./pictures/b_edit.png' alt='edit' style='width: 20px; height: 20px;'>
                         </a>
                         </td>
                      <td>
                         <a href='./delete.php?id=". $record["id"] ."'>
-                        <img src='./img/b_drop.png' alt='drop' style='width: 20px; height: 20px;'>
+                        <img src='./pictures/b_drop.png' alt='drop' style='width: 20px; height: 20px;'>
                         </a>
                         </td>
                          </tr>";
