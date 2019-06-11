@@ -1,5 +1,6 @@
 <?php
-
+var_dump($_POST);
+echo $id;
  include("./connect_db.php");
 
  include("./functions.php");
