@@ -12,12 +12,12 @@
 
     $sql = "UPDATE `login` SET 
                     `email` = '$email', 
-                    `userrole` = '$userrole',
-            WHERE `id` = $id";
+                    `userrole` = '$userrole'
+            WHERE `login` . `id` = $id;";
+
 
     mysqli_query($conn, $sql);
     
 
     header("Refresh: 4; ./index.php?content=gebruikersrollen");
-    
 ?>
