@@ -14,7 +14,7 @@
 
 
     $sql = "INSERT INTO `product` (
-                    `id`
+                    `id`,
                     `name`, 
                     `code`,
                     `image`, 
@@ -22,7 +22,7 @@
                     `description`) VALUES (NULL, '$name', '$code', '$image', '$price', '$description')";
 
     mysqli_query($conn, $sql);
-    
+   
 
     header("Refresh: 2; ./index.php?content=producten");
     
