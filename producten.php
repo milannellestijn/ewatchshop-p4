@@ -70,7 +70,9 @@ $result = mysqli_query($conn, $sql);
             ?>
         </tbody>
 </table>
-
+<a href="./index.php?content=product_add">
+<button  class="btn btn-primary">Maak Nieuwe</button>
+</a>
      </div>
     </div>
 
