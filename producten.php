@@ -1,40 +1,77 @@
-<?php include("./dbcontroller.php"); 
-$db_handle = new DBController();
-?>
+
 
 <?php
-$product = $db_handle->runQuery("SELECT * FROM `product` ");
-	if (!empty($product)) { 
-		foreach($product as $key=>$value){
-	?>
-    
- 
-<form action="./producten-script.php" method="post">
-<div class="card" style="width: 18rem;">
-<input type="hidden" name="id" value="<?=$product[$key]['id']?>">
-<input type="text" class="form-control" id="name" name="name" value="<?php echo $product[$key]["name"]; ?>" >
-<input type="text" class="form-control" id="code" name="code" value="<?php echo $product[$key]["code"]; ?>" >
-<input type="text" class="form-control" id="price" name="price" value="<?php echo $product[$key]["price"]; ?>" >
-<input type="text" class="form-control" id="description" name="description" value="<?php echo $product[$key]["description"]; ?>" >
-<input type="text" class="form-control" id="image" name="image" value="<?php echo $product[$key]["image"]; ?>" >
+//We maken contact met de mysql-server
+include("./connect_db.php");
 
-<button type="submit" class="btn btn-primary">Stuur op</button>
-</div>
-</form>
+// We includen de sanitize funtion om de $_POST waarden schoon te maken.
+include("./functions.php");
+
+// Dit is een select query om de records uit de tabel te halen
+$sql = "SELECT * FROM `product`";
 
 
-      <?php
-		}
-	}
-	?>
+// vuur de query af op de database en je krijgt antwoord terug. stop dit $result
+$result = mysqli_query($conn, $sql);
 
-<form action="./add.php" method="post">
-<div class="card" style="width: 18rem;">
-<input type="text" class="form-control" id="name" name="name"  >
-<input type="text" class="form-control" id="code" name="code"  >
-<input type="text" class="form-control" id="price" name="price"  >
-<input type="text" class="form-control" id="description" name="description"  >
-<input type="text" class="form-control" id="image" name="image"  >
-<button type="submit" class="btn btn-primary">Stuur op</button>
-</div>
-</form>
+
+
+
+
+?>
+
+<main class="container">
+
+    <div class="row">
+     <div class="col-12">
+            <table class="table table-hover">
+        <thead>
+            <tr>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">code</th>
+            <th scope="col">price</th>
+            <th scope="col">description</th>
+            <th scope="col">image</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <?php
+                        // $resultis niet leesbaar, we maken er een associatief array van
+                        // var_dump($result);
+                        // echo $sql;
+                        while ($record = mysqli_fetch_assoc($result)) {
+                        echo "<tr><th scope = 'row'>" . $record["id"] . "</th>" .
+                     "<td>" . $record["name"] . "</td>" .
+                     "<td>" . $record["code"] . "</td>" .
+                     "<td>" . $record["price"] . "</td>" .
+                     "<td>" . $record["description"] . "</td>" .
+                     "<td>" . $record["image"] . "</td>" .
+
+
+
+                    "<td>
+                        <a href='./update_product.php?id=". $record["id"] ."'>
+                        <img src='./pictures/b_edit.png' alt='edit' style='width: 20px; height: 20px;'>
+                        </a>
+                        </td>
+                     <td>
+                        <a href='./delete_product.php?id=". $record["id"] ."'>
+                        <img src='./pictures/b_drop.png' alt='drop' style='width: 20px; height: 20px;'>
+                        </a>
+                        </td>
+                         </tr>";
+                         }
+            ?>
+        </tbody>
+</table>
+
+     </div>
+    </div>
+
+    </main>
