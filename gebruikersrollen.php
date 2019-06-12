@@ -26,6 +26,8 @@ $result = mysqli_query($conn, $sql);
             <th scope="col">id</th>
             <th scope="col">Email</th>
             <th scope="col">Role</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
 
 
             </tr>
