@@ -15,9 +15,15 @@
               echo '<li class="nav-item">
                       <a class="nav-link" href="./index.php?content=administrator_home">AdminHome<span class="sr-only">(current)</span></a>
                     </li>';
-                    '<li class="nav-item">
-                            <a class="nav-link" href="./index.php?content=contactadmin">ContactAdmin<span class="sr-only">(current)</span></a>
+              echo  '<li class="nav-item">
+                            <a class="nav-link" href="./index.php?content=contactadmin">Contact Admin<span class="sr-only">(current)</span></a>
                           </li>';
+                          echo '<li class="nav-item">
+                          <a class="nav-link" href="./index.php?content=gebruikersrollen">Gebruikers rollen<span class="sr-only">(current)</span></a>
+                        </li>';
+                        echo '<li class="nav-item">
+                        <a class="nav-link" href="./index.php?content=producten">Producten<span class="sr-only">(current)</span></a>
+                      </li>';                          
             break;
             case 'customer':
               echo '<li class="nav-item">
