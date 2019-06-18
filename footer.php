@@ -7,42 +7,23 @@
     <!-- Grid row-->
     <div class="row text-center d-flex justify-content-center pt-5 mb-3">
 
-      <!-- Grid column -->
-      <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
-          <a href="#!">About us</a>
-        </h6>
-      </div>
-      <!-- Grid column -->
 
       <!-- Grid column -->
       <div class="col-md-2 mb-3">
         <h6 class="text-uppercase font-weight-bold">
-          <a href="#!">Products</a>
+          <a href="./index.php?content=items">Products</a>
         </h6>
       </div>
       <!-- Grid column -->
 
+
       <!-- Grid column -->
-      <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
-          <a href="#!">Awards</a>
-        </h6>
-      </div>
-      <!-- Grid column -->
+
 
       <!-- Grid column -->
       <div class="col-md-2 mb-3">
         <h6 class="text-uppercase font-weight-bold">
-          <a href="#!">Help</a>
-        </h6>
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
-          <a href="#!">Contact</a>
+          <a href="./index.php?content=contact">Contact</a>
         </h6>
       </div>
       <!-- Grid column -->
@@ -109,8 +90,8 @@
   <!-- Footer Links -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2018 Copyright:
-    <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+  <div class="footer-copyright text-center py-3">© 2019 Copyright: ewatchshop.com
+
   </div>
   <!-- Copyright -->
 
