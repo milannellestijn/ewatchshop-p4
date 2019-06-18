@@ -1,3 +1,4 @@
+<?php ob_start(); session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,6 +35,7 @@
     </section>
   </div>
 </div>
+
 
 <div class="row">
 <div class="col-12">
