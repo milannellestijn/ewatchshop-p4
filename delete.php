@@ -9,10 +9,10 @@
 
  $id = sanitize($_GET["id"]);
 
- $sql ="DELETE FROM `login` WHERE `login`.`id` = $id";
+ $sql ="DELETE FROM `login` WHERE `login`.`iduser` = $id";
 
 mysqli_query($conn ,$sql);
 
- header("Refresh: 5; ./index.php?content=gebruikersrollen");
+ header("Refresh: 1; ./index.php?content=gebruikersrollen");
 
 ?>

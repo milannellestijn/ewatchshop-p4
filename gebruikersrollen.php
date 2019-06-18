@@ -1,4 +1,9 @@
 <?php
+  $userrole = ['administrator'];
+  include("./security.php");
+?>
+
+<?php
 //We maken contact met de mysql-server
 include("./connect_db.php");
 
@@ -38,19 +43,19 @@ $result = mysqli_query($conn, $sql);
                         // $resultis niet leesbaar, we maken er een associatief array van
                         //var_dump($result);
                         while ($record = mysqli_fetch_assoc($result)) {
-                        echo "<tr><th scope = 'row'>" . $record["id"] . "</th>" .
+                        echo "<tr><th scope = 'row'>" . $record["iduser"] . "</th>" .
                      "<td>" . $record["email"] . "</td>" .
                      "<td>" . $record["userrole"] . "</td>" .
 
 
 
                     "<td>
-                        <a href='./update.php?id=". $record["id"] ."'>
+                        <a href='./update.php?id=". $record["iduser"] ."'>
                         <img src='./pictures/b_edit.png' alt='edit' style='width: 20px; height: 20px;'>
                         </a>
                         </td>
                      <td>
-                        <a href='./delete.php?id=". $record["id"] ."'>
+                        <a href='./delete.php?id=". $record["iduser"] ."'>
                         <img src='./pictures/b_drop.png' alt='drop' style='width: 20px; height: 20px;'>
                         </a>
                         </td>

@@ -1,6 +1,7 @@
 <?php
  
 
+
     include("./connect_db.php");
 
     include("./functions.php");
@@ -13,7 +14,7 @@
     $sql = "UPDATE `login` SET 
                     `email` = '$email', 
                     `userrole` = '$userrole'
-            WHERE `login` . `id` = $id;";
+            WHERE `login` . `iduser` = $id;";
 
 
     mysqli_query($conn, $sql);

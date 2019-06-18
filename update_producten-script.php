@@ -1,6 +1,8 @@
 <?php
  
 
+
+
     include("./connect_db.php");
 
     include("./functions.php");
@@ -20,7 +22,7 @@
                     `image` = '$image',
                     `price` = '$price',
                     `description` = '$description'
-            WHERE `id` = $id";
+            WHERE `iduser` = $id";
 
     mysqli_query($conn, $sql);
     

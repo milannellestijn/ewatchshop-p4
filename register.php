@@ -31,7 +31,7 @@
   $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
   // We maken onze insert-query
-  $sql = "INSERT INTO `login` (`id`,
+  $sql = "INSERT INTO `login` (`iduser`,
                                `email`,
                                `password`,
                                `userrole`)
@@ -61,7 +61,7 @@
                 <h1>Beste klant,</h1>
                   <p>Bedankt voor het registreren op. Door op de onderstaande activatielink te klikken wordt het registratieproces voltooid.</p>
                   <p>
-                    <a href="ewatchshop.com/index.php?content=createpassword&id=' . $id . '&pw=' . $password_hash . '">activeer uw account</a>
+                    <a href="www.ewatchshop.com/index.php?content=createpassword&id=' . $id . '&pw=' . $password_hash . '">activeer uw account</a>
                   </p>
                   <p> Met vriendelijk groet,</p>
                   <p>Uw administrator</p>
@@ -84,7 +84,9 @@
     echo '<div class="alert alert-danger" role="alert">
             Er is iets mis gegaan met de registratie, probeer het opnieuw.
           </div>';
-    header("Refresh: 4; url=./index.php?content=registerform");
+    header("Refresh: 40; url=./index.php?content=registerform");
+    echo $sql;
+    var_dump($_POST);
   }
 
 }

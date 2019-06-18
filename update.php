@@ -1,6 +1,8 @@
 <?php
-var_dump($_POST);
-echo $id;
+
+
+
+
  include("./connect_db.php");
 
  include("./functions.php");
@@ -8,7 +10,7 @@ echo $id;
 
 $id = sanitize($_GET["id"]);
 
- $sql = "SELECT * FROM `login` WHERE `id` = $id";
+ $sql = "SELECT * FROM `login` WHERE `iduser` = $id";
 
  $result = mysqli_query($conn, $sql);
 
@@ -17,7 +19,7 @@ $id = sanitize($_GET["id"]);
 
 ?>
 <form action="./update_record.php" method="post">
-<input type="hidden" name="id" value="<?=$record['id']?>">
+<input type="hidden" name="id" value="<?=$record['iduser']?>">
 <div class="form-group">
     <label for="exampleInputEmail1">Email</label>
     <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email" value="<?php echo $record["email"]; ?>">

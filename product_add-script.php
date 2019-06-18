@@ -1,5 +1,7 @@
 <?php
- 
+
+
+
 
     include("./connect_db.php");
 
@@ -14,7 +16,7 @@
 
 
     $sql = "INSERT INTO `product` (
-                    `id`,
+                    `idproduct`,
                     `name`, 
                     `code`,
                     `image`, 
@@ -22,8 +24,8 @@
                     `description`) VALUES (NULL, '$name', '$code', '$image', '$price', '$description')";
 
     mysqli_query($conn, $sql);
-   
+   echo $sql;
 
-    header("Refresh: 2; ./index.php?content=producten");
+    header("Refresh: 1; ./index.php?content=producten");
     
 ?>

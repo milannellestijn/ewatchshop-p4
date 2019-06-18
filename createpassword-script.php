@@ -13,7 +13,7 @@
   if ( !strcmp($password, $verify_password)) {
 
     // Als de wachtwoorden gelijk zijn dan vragen we het record op basis van id op uit de database
-    $sql = "SELECT * FROM `login` WHERE `id` = $id";
+    $sql = "SELECT * FROM `login` WHERE `iduser` = $id";
 
     $result = mysqli_query($conn, $sql);
 
@@ -29,13 +29,13 @@
         if ( !empty($password) && !empty($verify_password)) {
           $sql = "UPDATE  `login`
                   SET     `password` = '$blowfish_password'
-                  WHERE   `id`       = $id";
+                  WHERE   `iduser`       = $id";
 
           $result = mysqli_query($conn, $sql);
 
           if ($result) {
             // Selecteer het emailadres en geef dit mee als $_GET variabele aan de url
-            $sql = "SELECT * FROM `login` WHERE `id` = $id";
+            $sql = "SELECT * FROM `login` WHERE `iduser` = $id";
 
             $result = mysqli_query($conn, $sql);
 

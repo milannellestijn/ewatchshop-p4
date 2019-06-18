@@ -2,6 +2,10 @@
 
 <?php
 
+
+
+
+
  include("./connect_db.php");
 
  include("./functions.php");
@@ -9,7 +13,7 @@
 
 $id = sanitize($_GET["id"]);
 
- $sql = "SELECT * FROM `product` WHERE `id` = $id";
+ $sql = "SELECT * FROM `product` WHERE `idproduct` = $id";
 
  $result = mysqli_query($conn, $sql);
 
@@ -18,7 +22,7 @@ $id = sanitize($_GET["id"]);
 
 ?>
 <form action="./update_producten-script.php" method="post">
-    <input type="hidden" name="id" value="<?=$record['id']?>">
+    <input type="hidden" name="id" value="<?=$record['idproduct']?>">
 <input type="text" class="form-control" id="name" name="name" value="<?php echo $record["name"]; ?>" >
 <input type="text" class="form-control" id="code" name="code" value="<?php echo $record["code"]; ?>" >
 <input type="text" class="form-control" id="price" name="price" value="<?php echo $record["price"]; ?>" >
