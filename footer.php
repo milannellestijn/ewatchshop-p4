@@ -51,16 +51,12 @@
     <!-- Grid row-->
     <hr class="rgba-white-light" style="margin: 0 15%;">
 
-    <!-- Grid row-->
+    <!-- Grid row -->
     <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
 
       <!-- Grid column -->
       <div class="col-md-8 col-12 mt-5">
-        <p style="line-height: 1.7rem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem
-          aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-          explicabo.
-          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+        <p style="line-height: 1.7rem">Dit is een website gemaakt door miland & jay owen.</p>
       </div>
       <!-- Grid column -->
 
