@@ -30,7 +30,7 @@
       if ( password_verify($password, $db_password) ) {
         // Stuur door naar homepage gebruikersrol
 
-        $_SESSION["id"] = $record["id"];
+        $_SESSION["id"] = $record["iduser"];
         $_SESSION["email"] = $record["email"];
         $_SESSION["userrole"] = $record["userrole"];
 
@@ -69,5 +69,4 @@
           </div>';
     header("Refresh: 3; url=./index.php?content=loginform&email=$email");
   }
-
 ?>
