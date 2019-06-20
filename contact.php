@@ -42,9 +42,23 @@
     <textarea class="form-control" name="vraag" id="vraag" rows="5" placeholder="Stel hier uw vraag" required></textarea>
   </div>
   <button type="submit" value="Submit" class="btn btn-primary">Verstuur</button>
-
-
-
 </form>
+&nbsp;
+<div>Onze bedrijf is gevestigd op de daltonlaan, het is makkelijk bereikbaar met de auto en met de bus.</div>
+&nbsp;
+<h1>Contact gegevens:</h1>
+<div class="card" style="width: 18rem;">
+<ul class="list-group list-group-flush">
+<li class="list-group-item">tel: 030 77489482 </li>
+<li class="list-group-item">Adres: Daltonlaan 23 </li>
+    <li class="list-group-item">Postcode: 3584 BJ Utrecht</li>
+        <li class="list-group-item">Email: info@ewatchshop.nl</li>
+</ul>
+</div>
+&nbsp;
+<div style="overflow:hidden;width: 700px;position: relative;"><iframe width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=daltonlaan+(Ewatchshop)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;"><small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by <a href="https://embedgooglemaps.com/de/">https://embedgooglemaps.com/de/</a> & <a href="http://www.stedentrippers.nl/berlijn.html">Stedentrippers Nl (tip)</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><br />
+
+
+
   </body>
 </html>
