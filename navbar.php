@@ -27,11 +27,14 @@
             break;
             case 'customer':
               echo '<li class="nav-item">
-                      <a class="nav-link" href="./index.php?content=customer_home">CustomerHome<span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="./index.php?content=items">Producten<span class="sr-only">(current)</span></a>
                     </li>';
                     '<li class="nav-item">
                             <a class="nav-link" href="./index.php?content=contact">Contact<span class="sr-only">(current)</span></a>
                           </li>';
+                          
+                          
+                          
           break;
             default:
               header("Location: url=./index.php?content=logout");
@@ -55,6 +58,18 @@
                 </li>';
         }
       ?>
+	
+<?php
+if(!empty($_SESSION["shopping_cart"])) {
+$cart_count = count(array_keys($_SESSION["shopping_cart"]));
+?>
+<div class="cart_div">
+<a href="index.php"><img src="./pictures/shopcart.png" hight="42" width="42"/> Cart<span>
+<?php echo $cart_count; ?></span></a>
+</div>
+<?php
+}
+?>
     </ul>
 
   </div>
