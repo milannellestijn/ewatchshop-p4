@@ -21,24 +21,30 @@
                         echo '<li class="nav-item">
                         <a class="nav-link" href="./index.php?content=producten">Producten<span class="sr-only">(current)</span></a>
                       </li>';
-                      echo  '<li class="nav-item">
-                            <a class="nav-link" href="./index.php?content=info">Info<span class="sr-only">(current)</span></a>
-                            </li>';
+                      echo '<li class="nav-item">
+                      <a class="nav-link" href="./index.php?content=orders">Bestellingen<span class="sr-only">(current)</span></a>
+                    </li>';
+                    echo      '<li class="nav-item">
+                    <a class="nav-link" href="./index.php?content=info">Info<span class="sr-only">(current)</span></a>
+                  </li>';
             break;
             case 'customer':
               echo '<li class="nav-item">
                       <a class="nav-link" href="./index.php?content=items">Producten<span class="sr-only">(current)</span></a>
                     </li>';
-                echo    '<li class="nav-item">
+              echo      '<li class="nav-item">
                             <a class="nav-link" href="./index.php?content=contact">Contact<span class="sr-only">(current)</span></a>
                           </li>';
-                          echo  '<li class="nav-item">
-                                <a class="nav-link" href="./index.php?content=info">Info<span class="sr-only">(current)</span></a>
-                                </li>';
-
-
-
-
+             echo      '<li class="nav-item">
+                            <a class="nav-link" href="./index.php?content=track">Bestellingen<span class="sr-only">(current)</span></a>
+                          </li>';
+                          echo      '<li class="nav-item">
+                          <a class="nav-link" href="./index.php?content=info">Info<span class="sr-only">(current)</span></a>
+                        </li>';
+                        
+                          
+                          
+                          
           break;
             default:
               header("Location: url=./index.php?content=logout");
@@ -71,7 +77,7 @@ if(!empty($_SESSION["shopping_cart"])) {
 $cart_count = count(array_keys($_SESSION["shopping_cart"]));
 ?>
 <div class="cart_div">
-<a href="./index.php?content=shopcart"><img src="./pictures/shopcart.png" hight="42" width="42"/> Cart<span>
+<a href="index.php?content=shopcart"><img src="./pictures/shopcart.png" hight="42" width="42"/> Cart<span>
 <?php echo $cart_count; ?></span></a>
 </div>
 <?php

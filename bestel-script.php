@@ -108,7 +108,7 @@ echo $sql . "<br>";
 }
 
     header("Refresh: 1; ./index.php?content=track");
-    
+    unset($_SESSION["shopping_cart"])
 
 
 ?>
