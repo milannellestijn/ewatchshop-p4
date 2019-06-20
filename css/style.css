@@ -1,3 +1,9 @@
+body {
+	background-image: url("../pictures/background.png");
+	 background-size: cover;
+}
+
+
 .product_wrapper {
 	float:left;
 	padding: 10px;
@@ -41,7 +47,7 @@
 	}
 .cart_div a {
 	color:#000;
-	}	
+	}
 .cart_div span {
 	font-size: 12px;
 	line-height: 14px;
