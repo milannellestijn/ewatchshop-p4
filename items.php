@@ -24,7 +24,8 @@ $cartArray = array(
 	'idproduct'=>$idproduct,
 	'price'=>$price,
 	'quantity'=>1,
-	'image'=>$image)
+    'image'=>$image,
+    'description'=>$discription)
 );
  
 if(empty($_SESSION["shopping_cart"])) {
@@ -68,6 +69,7 @@ while($row = mysqli_fetch_assoc($result)){
     <div class='image'><img src='".$row['image']."' /></div>
     <div class='name'>".$row['name']."</div>
     <div class='price'>$".$row['price']."</div>
+    <div class='price'>".$row['description']."</div>
     <button type='submit' class='buy'>Buy Now</button>
     </form>
     </div>";
