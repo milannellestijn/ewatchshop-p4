@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 11 jun 2019 om 07:57
+-- Gegenereerd op: 20 jun 2019 om 11:59
 -- Serverversie: 5.7.23
 -- PHP-versie: 7.2.10
 
@@ -30,25 +30,26 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE IF NOT EXISTS `product` (
-  `id` int(8) NOT NULL AUTO_INCREMENT,
+  `idproduct` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `code` varchar(255) NOT NULL,
   `image` text NOT NULL,
   `price` double(10,2) NOT NULL,
   `description` text NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `product_code` (`code`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `stock` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idproduct`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `product`
 --
 
-INSERT INTO `product` (`id`, `name`, `code`, `image`, `price`, `description`) VALUES
-(1, 'Smartwatch1', 'SM004', './pictures/smartwatch1.jpg', 1500.00, ''),
-(2, 'Smartwatch2', 'SM003', 'afbeelding.jpg', 800.00, ''),
-(3, 'Smartwatch3', 'SM002', 'afbeelding.jpg', 300.00, ''),
-(4, 'Smartwatch4', 'SM001', 'afbeelding.jpg', 800.00, '');
+INSERT INTO `product` (`idproduct`, `name`, `code`, `image`, `price`, `description`, `stock`) VALUES
+(22, 'Olaf Smart watch', 'SM012', './pictures/smartwatch3.jpg', 919.00, 'DE beste smartwatch', 3),
+(23, 'Jay smart', 'SM101', './pictures/smartwatch5.jpg', 111.00, 'Halo', 5),
+(24, 'Apple watch', 'SM003', './pictures/applewatch.jpg', 549.99, 'De nieuwste apple watch', 3),
+(25, 'milan watch', 'SM826', './pictures/smartwatch4.jpg', 220.00, 'Milan\'s smart watch', 4),
+(26, 'Smartwatch female', 'SM420', './pictures/smartwatch2.jpg', 150.00, 'Smarwatch for women', 9);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
