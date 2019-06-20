@@ -6,23 +6,23 @@
 
 include('./connect_db.php');
 $status="";
-if (isset($_POST['code']) && $_POST['code']!=""){
-$code = $_POST['code'];
-echo $code;
+if (isset($_POST['idproduct']) && $_POST['idproduct']!=""){
+$idproduct = $_POST['idproduct'];
+echo $idproduct;
 $result = mysqli_query(
 $conn,
-"SELECT * FROM `product` WHERE `code`='$code'"
+"SELECT * FROM `product` WHERE `idproduct`='$idproduct'"
 );
 $row = mysqli_fetch_assoc($result);
 $name = $row['name'];
-$code = $row['code'];
+$idproduct = $row['idproduct'];
 $price = $row['price'];
 $image = $row['image'];
 
 $cartArray = array(
-	$code=>array(
+	$idporudct=>array(
 	'name'=>$name,
-	'code'=>$code,
+	'idproduct'=>$idproduct,
 	'price'=>$price,
 	'quantity'=>1,
 	'image'=>$image)
@@ -33,7 +33,7 @@ if(empty($_SESSION["shopping_cart"])) {
     $status = "<div class='box'>Product is added to your cart!</div>";
 }else{
     $array_keys = array_keys($_SESSION["shopping_cart"]);
-    if(in_array($code,$array_keys)) {
+    if(in_array($idproduct,$array_keys)) {
 	$status = "<div class='box' style='color:red;'>
 	Product is already added to your cart!</div>";
     } else {
@@ -54,11 +54,11 @@ if(empty($_SESSION["shopping_cart"])) {
 <?php
 $result = mysqli_query($conn,"SELECT * FROM `product`");
 while($row = mysqli_fetch_assoc($result)){
-    echo $row['code'];
+    
     echo "<div class='product_wrapper'>
-
-    <input type='hidden' name='code' value=".$row['code']." />
-    <div class='image'><img src='".$row['image']."'/></div>
+    
+    <input type='hidden' name='idproduct' value=".$row['idproduct']." />
+    <div class='image'><img src='".$row['image']."' /></div>
     <div class='name'>".$row['name']."</div>
     <div class='price'>$".$row['price']."</div>
 
