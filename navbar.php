@@ -24,13 +24,19 @@
                         echo '<li class="nav-item">
                         <a class="nav-link" href="./index.php?content=producten">Producten<span class="sr-only">(current)</span></a>
                       </li>';
+                      echo '<li class="nav-item">
+                      <a class="nav-link" href="./index.php?content=orders">Bestellingen<span class="sr-only">(current)</span></a>
+                    </li>';
             break;
             case 'customer':
               echo '<li class="nav-item">
                       <a class="nav-link" href="./index.php?content=items">Producten<span class="sr-only">(current)</span></a>
                     </li>';
-                    '<li class="nav-item">
+              echo      '<li class="nav-item">
                             <a class="nav-link" href="./index.php?content=contact">Contact<span class="sr-only">(current)</span></a>
+                          </li>';
+             echo      '<li class="nav-item">
+                            <a class="nav-link" href="./index.php?content=track">Bestellingen<span class="sr-only">(current)</span></a>
                           </li>';
                           
                           
