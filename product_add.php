@@ -1,3 +1,6 @@
+
+
+
 <form action="./product_add-script.php" method="post">
 <div class="card" style="width: 36rem;">
 <label for="name">Name</label>

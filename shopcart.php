@@ -1,42 +1,122 @@
-<?php
 
-// include("./items2.php"); 
-include("./dbcontroller.php"); 
-$db_handle = new DBController();
+
+
+	
+
+
+
+	
+<?php
+include("./connect_db.php");
+
+$status="";
+if (isset($_POST['action']) && $_POST['action']=="remove"){
+if(!empty($_SESSION["shopping_cart"])) {
+    foreach($_SESSION["shopping_cart"] as $key => $value) {
+      if($_POST["idproduct"] == $key){
+      unset($_SESSION["shopping_cart"][$key]);
+      $status = "<div class='box' style='color:red;'>
+      Product is removed from your cart!</div>";
+      }
+      if(empty($_SESSION["shopping_cart"]))
+      unset($_SESSION["shopping_cart"]);
+      }		
+}
+}
+ 
+if (isset($_POST['action']) && $_POST['action']=="change"){
+  foreach($_SESSION["shopping_cart"] as &$value){
+    if($value['idproduct'] === $_POST["idproduct"]){
+        $value['quantity'] = $_POST["quantity"];
+        break; // Stop the loop after we've found the product
+    }
+}
+  	
+}
 ?>
 
-<div class="row">
-	<div >Products</div>
-	<?php
-	$product_array = $db_handle->runQuery("SELECT * FROM tblproduct ORDER BY id ASC");
-	if (!empty($product_array)) { 
-		foreach($product_array as $key=>$value){
-	?>
-		
-			
-			<form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-			<div class="col-lg-4 col-md-6 mb-4">
-   			<div class="card h-100">
-     		<div><img src="<?php echo $product_array[$key]["image"]; ?>"></div>
-     		<div class="card-body">
-        	<h4 class="card-title">
-            <a><?php echo $product_array[$key]["name"]; ?></a>
-        	</h4>
-        	<h5><?php echo "$".$product_array[$key]["price"]; ?></h5>
-       	 	<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-      		</div>
-     		<div class="card-footer">
-	 		<div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
-        	<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-      		</div>
-    		</div>
-  			</div>
-  			</form>
-			
-			
-	<?php
-		}
+	
+<div class="cart">
+<?php
+if(isset($_SESSION["shopping_cart"])){
+    $total_price = 0;
+?>	
+<table class="table">
+<tbody>
+<tr>
+<td></td>
+<td>ITEM NAME</td>
+<td>QUANTITY</td>
+<td>UNIT PRICE</td>
+<td>ITEMS TOTAL</td>
+</tr>	
+<?php		
+foreach ($_SESSION["shopping_cart"] as $product){
+?>
+<tr>
+<td>
+<img src='<?php echo $product["image"]; ?>' width="50" height="40" />
+</td>
+<td><?php echo $product["name"]; ?><br />
+<form method='post' action=''>
+<input type='hidden' name= 'idproduct' value="<?php echo $product["idproduct"]; ?>" />
+<input type='hidden' name='action' value="remove" />
+<button type='submit' class='remove'>Remove Item</button>
+</form>
+</td>
+<td>
+<form method='post' action=''>
+<input type='hidden' name='idproduct' value="<?php echo $product["idproduct"]; ?>" />
+<input type='hidden' name='action' value="change" />
+<select name='quantity' class='quantity' onChange="this.form.submit()">
+<option <?php if($product["quantity"]==1) echo "selected";?>
+value="1">1</option>
+<option <?php if($product["quantity"]==2) echo "selected";?>
+value="2">2</option>
+<option <?php if($product["quantity"]==3) echo "selected";?>
+value="3">3</option>
+<option <?php if($product["quantity"]==4) echo "selected";?>
+value="4">4</option>
+<option <?php if($product["quantity"]==5) echo "selected";?>
+value="5">5</option>
+</select>
+</form>
+</td>
+<td><?php echo "$".$product["price"]; ?></td>
+<td><?php echo "$".$product["price"]*$product["quantity"]; ?></td>
+</tr>
+<?php
+$total_price += ($product["price"]*$product["quantity"]);
+}
+?>
+<tr>
+<td colspan="5" align="right">
+<strong>TOTAL: <?php echo "$".$total_price; ?></strong>
+</td>
+</tr>
+</tbody>
+</table>		
+  <?php
+}else{
+	echo "<h3>Your cart is empty!</h3>";
 	}
-	?>
+?>
 </div>
-</BODY>
+ 
+<div style="clear:both;"></div>
+ 
+<div class="message_box" style="margin:10px 0px;">
+<?php echo $status; ?>
+</div>
+<a href="./index.php?content=bestel">
+Bestel
+</a>
+
+</div>
+
+<? 
+var_dumbp($_POST);
+echo $sql;
+
+
+?>

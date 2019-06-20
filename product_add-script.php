@@ -24,7 +24,7 @@
                     `description`) VALUES (NULL, '$name', '$code', '$image', '$price', '$description')";
 
     mysqli_query($conn, $sql);
-   echo $sql;
+    
 
     header("Refresh: 1; ./index.php?content=producten");
     

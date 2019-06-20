@@ -2,26 +2,27 @@
 
 
 
-
-
 <?php
 
 include('./connect_db.php');
 $status="";
-if (isset($_POST['idproduct']) && $_POST['idproduct']!=""){
-$idproduct = $_POST['idproduct'];
-$result = mysqli_query($conn,"SELECT * FROM `product` WHERE `idproduct`='$idproduct'");
-
+if (isset($_POST['code']) && $_POST['code']!=""){
+$code = $_POST['code'];
+echo $code;
+$result = mysqli_query(
+$conn,
+"SELECT * FROM `product` WHERE `code`='$code'"
+);
 $row = mysqli_fetch_assoc($result);
 $name = $row['name'];
-$idproduct = $row['idproduct'];
+$code = $row['code'];
 $price = $row['price'];
 $image = $row['image'];
  
 $cartArray = array(
-	$idproduct=>array(
+	$code=>array(
 	'name'=>$name,
-	'idproduct'=>$idproduct,
+	'code'=>$code,
 	'price'=>$price,
 	'quantity'=>1,
 	'image'=>$image)
@@ -32,7 +33,7 @@ if(empty($_SESSION["shopping_cart"])) {
     $status = "<div class='box'>Product is added to your cart!</div>";
 }else{
     $array_keys = array_keys($_SESSION["shopping_cart"]);
-    if(in_array($idproduct,$array_keys)) {
+    if(in_array($code,$array_keys)) {
 	$status = "<div class='box' style='color:red;'>
 	Product is already added to your cart!</div>";	
     } else {
@@ -46,37 +47,34 @@ if(empty($_SESSION["shopping_cart"])) {
 	}
 }
 ?>
+
 	
-<?php
-if(!empty($_SESSION["shopping_cart"])) {
-$cart_count = count(array_keys($_SESSION["shopping_cart"]));
-?>
-<div class="cart_div">
-<a href="index.php?content=shopcart"><img src="cart-icon.png" /> Cart<span>
-<?php echo $cart_count; ?></span></a>
-</div>
-<?php
-}
-?>
+
 
 <?php
 $result = mysqli_query($conn,"SELECT * FROM `product`");
 while($row = mysqli_fetch_assoc($result)){
+    echo $row['code'];
     echo "<div class='product_wrapper'>
-    <form method='post' action=''>
-    <input type='hidden' name='idproduct' value=".$row['idproduct']." />
+    
+    <input type='hidden' name='code' value=".$row['code']." />
     <div class='image'><img src='".$row['image']."' /></div>
     <div class='name'>".$row['name']."</div>
     <div class='price'>$".$row['price']."</div>
-    <button type='submit' class='buy'>Buy Now</button>
-    </form>
+    
+
+   
+   
     </div>";
         }
 mysqli_close($conn);
+
 ?>
  
 <div style="clear:both;"></div>
  
 <div class="message_box" style="margin:10px 0px;">
 <?php echo $status; ?>
+
+
 </div>

@@ -1,39 +1,105 @@
-<form>
+<?
+include("./connect_db.php");
+
+
+$id = isset($_SESSION['iduser']) ? $_SESSION['iduser'] : '';
+
+?>
+
+<div class="cart">
+<?php
+if(isset($_SESSION["shopping_cart"])){
+    $total_price = 0;
+?>	
+<table class="table">
+<tbody>
+<tr>
+<td></td>
+<td>ITEM NAME</td>
+<td>QUANTITY</td>
+<td>UNIT PRICE</td>
+<td>ITEMS TOTAL</td>
+</tr>	
+<?php		
+foreach ($_SESSION["shopping_cart"] as $product){
+?>
+<tr>
+<td>
+<img src='<?php echo $product["image"]; ?>' width="50" height="40" />
+</td>
+<td><?php echo $product["name"]; ?><br />
+
+</td>
+<td><?php echo $product["quantity"]; ?></td>
+
+<td><?php echo "$".$product["price"]; ?></td>
+<td><?php echo "$".$product["price"]*$product["quantity"]; ?></td>
+</tr>
+<?php
+$total_price += ($product["price"]*$product["quantity"]);
+}
+?>
+<tr>
+<td colspan="5" align="right">
+<strong>TOTAL: <?php echo "$".$total_price; ?></strong>
+</td>
+</tr>
+</tbody>
+</table>		
+  <?php
+}else{
+	echo "<h3>Your cart is empty!</h3>";
+	}
+?>
+</div>
+ 
+<div style="clear:both;"></div>
+ 
+
+
+<form action="./index.php?content=bestel-script" method="post">
+<?php		
+foreach ($_SESSION["shopping_cart"] as $product){
+?>
+<input type="hidden" name="idproduct" value="<?php echo $product["idproduct"]; ?>">
+<input type="hidden" name="amount" value="<?php echo $product["quantity"]; ?>">
+
+<?php } ?>
   <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-    </div>
+  <input type="hidden" name="iduser" value="<?= $_SESSION["id"]?>">
     <div class="form-group col-md-6">
       <label for="inputPassword4">Voornaam</label>
-      <input type="text" class="form-control" id="inputfname" placeholder="Pieter">
+      <input type="text" class="form-control" id="firstname"  name="firstname" placeholder="Pieter">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Tussenvoegsel</label>
-      <input type="text" class="form-control" id="inputinfix" placeholder="van de">
+      <input type="text" class="form-control" id="infix" name="infix" placeholder="van de">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Achternaam</label>
-      <input type="text" class="form-control" id="inputsname" placeholder="Koning">
+      <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Koning">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputAddress">Straat</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="Straatweg">
+    <label for="inputAddress">Phone</label>
+    <input type="text" class="form-control" id="phone" name="phone" placeholder="06123456">
   </div>
   <div class="form-group">
     <label for="inputAddress2">Huisnummer</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="123">
+    <input type="text" class="form-control" id="address" name="address" placeholder="straat 123">
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">Stad</label>
-      <input type="text" class="form-control" id="inputCity" placeholder="Amsterdam">
+      <input type="text" class="form-control" id="city" name="city" placeholder="Amsterdam">
     </div>
     <div class="form-group col-md-2">
       <label for="inputZip">Postcode</label>
-      <input type="text" class="form-control" id="inputZip" placeholder="1111AA">
+      <input type="text" class="form-control" id="postalcode" name="postalcode" placeholder="1111AA">
     </div>
   </div>
   <button type="submit" class="btn btn-primary">Bestel</button>
 </form>
+<?
+
+?>
