@@ -5,7 +5,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    
+
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
       <?php
@@ -23,7 +23,7 @@
                         </li>';
                         echo '<li class="nav-item">
                         <a class="nav-link" href="./index.php?content=producten">Producten<span class="sr-only">(current)</span></a>
-                      </li>';                          
+                      </li>';
             break;
             case 'customer':
               echo '<li class="nav-item">
@@ -56,7 +56,7 @@
         }
       ?>
     </ul>
-    
+
   </div>
-  
+
 </nav>
