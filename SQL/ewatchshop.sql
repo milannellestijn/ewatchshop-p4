@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 18 jun 2019 om 07:31
+-- Gegenereerd op: 20 jun 2019 om 07:09
 -- Serverversie: 5.7.23
 -- PHP-versie: 7.2.10
 
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `login` (
   `postalcode` varchar(6) DEFAULT NULL,
   `city` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`iduser`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `login`
@@ -76,7 +76,8 @@ CREATE TABLE IF NOT EXISTS `login` (
 INSERT INTO `login` (`iduser`, `email`, `password`, `userrole`, `firstname`, `infix`, `lastname`, `phone`, `address`, `postalcode`, `city`) VALUES
 (13, '123@123', '$2y$10$qkA/2e5D9.MzEtCiSFpOsuMiODJ7jxcDefyrbBrfWVmrxyt3sjQBu', 'administrator', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (15, 'admin@admin', '$2y$10$bO7LUjw4iW4G2pFeH1aqdOhSgx4Qhp4GxqY2a/vZ2JQt1c1kGVDAi', 'administrator', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(17, 'klant@klant', '$2y$10$aew6gXr4QZTbwwuHVXkN9eW.1MQBtdBG8uhAFsWBqri1wRoEGGM2y', 'customer', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(17, 'klant@klant', '$2y$10$aew6gXr4QZTbwwuHVXkN9eW.1MQBtdBG8uhAFsWBqri1wRoEGGM2y', 'customer', 'Pieter', 'van de', 'Koning', 6123, 'Straat 123', '1111AA', 'Amtserdam'),
+(19, 'pieter@koning', '$2y$10$jdVFDGDO9n2Xi5niwnJctO8Fw8qnahI4t15nKr9CIf4mhL.ToOb.a', 'customer', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -89,12 +90,21 @@ CREATE TABLE IF NOT EXISTS `order` (
   `idorder` int(11) NOT NULL AUTO_INCREMENT,
   `iduser` int(11) NOT NULL,
   `date` datetime NOT NULL,
-  `price_ex` decimal(5,2) NOT NULL,
-  `price_inc` decimal(5,2) NOT NULL,
-  `status` enum('onderweg','afgeleverd','betaalt','gesorteerd') NOT NULL,
+  `price_ex` decimal(6,2) NOT NULL,
+  `price_inc` decimal(6,2) NOT NULL,
+  `status` enum('onderweg','afgeleverd','betaalt','gesorteerd') NOT NULL DEFAULT 'betaalt',
   PRIMARY KEY (`idorder`),
   KEY `iduser` (`iduser`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `order`
+--
+
+INSERT INTO `order` (`idorder`, `iduser`, `date`, `price_ex`, `price_inc`, `status`) VALUES
+(28, 17, '2019-06-20 08:49:45', '1030.00', '1246.30', 'betaalt'),
+(29, 17, '2019-06-20 08:54:55', '1949.00', '2358.29', 'betaalt'),
+(30, 17, '2019-06-20 08:57:40', '1949.00', '2358.29', 'betaalt');
 
 -- --------------------------------------------------------
 
@@ -106,14 +116,28 @@ DROP TABLE IF EXISTS `orderline`;
 CREATE TABLE IF NOT EXISTS `orderline` (
   `idorderline` int(11) NOT NULL AUTO_INCREMENT,
   `idorder` int(11) NOT NULL,
-  `idporduct` int(11) NOT NULL,
+  `idproduct` int(11) NOT NULL,
   `amount` int(11) NOT NULL,
-  `price` decimal(4,2) NOT NULL,
+  `price` decimal(5,2) NOT NULL,
   `total` decimal(5,2) NOT NULL,
   PRIMARY KEY (`idorderline`),
-  KEY `idorder` (`idorder`,`idporduct`),
-  KEY `idporduct` (`idporduct`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `idorder` (`idorder`,`idproduct`),
+  KEY `idporduct` (`idproduct`)
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `orderline`
+--
+
+INSERT INTO `orderline` (`idorderline`, `idorder`, `idproduct`, `amount`, `price`, `total`) VALUES
+(49, 28, 22, 1, '919.00', '919.00'),
+(50, 28, 23, 1, '111.00', '111.00'),
+(51, 29, 22, 1, '919.00', '919.00'),
+(52, 29, 23, 1, '111.00', '111.00'),
+(53, 29, 22, 1, '919.00', '919.00'),
+(54, 30, 22, 1, '919.00', '919.00'),
+(55, 30, 23, 1, '111.00', '111.00'),
+(56, 30, 22, 1, '919.00', '919.00');
 
 -- --------------------------------------------------------
 
@@ -132,15 +156,15 @@ CREATE TABLE IF NOT EXISTS `product` (
   `stock` int(11) DEFAULT NULL,
   PRIMARY KEY (`idproduct`),
   UNIQUE KEY `product_code` (`code`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `product`
 --
 
 INSERT INTO `product` (`idproduct`, `name`, `code`, `image`, `price`, `description`, `stock`) VALUES
-(15, 'De eerste smartwatch', 'SM001', './pictures/smartwatch1.jpg', 100.00, 'DE beste smartwatch', 0),
-(16, 'Giga smartwatch', 'sm100', '', 999.00, 'De giga smartwatch ', 0);
+(22, 'Olaf Smart watch', 'SM012', '', 919.00, 'DE beste smartwatch', 3),
+(23, 'Jay smart', 'SM101', '', 111.00, 'Halo', NULL);
 
 --
 -- Beperkingen voor geëxporteerde tabellen
@@ -157,7 +181,7 @@ ALTER TABLE `order`
 --
 ALTER TABLE `orderline`
   ADD CONSTRAINT `orderline_ibfk_1` FOREIGN KEY (`idorder`) REFERENCES `order` (`idorder`),
-  ADD CONSTRAINT `orderline_ibfk_2` FOREIGN KEY (`idporduct`) REFERENCES `product` (`idproduct`);
+  ADD CONSTRAINT `orderline_ibfk_2` FOREIGN KEY (`idproduct`) REFERENCES `product` (`idproduct`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
