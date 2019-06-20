@@ -13,6 +13,7 @@ Smartwatches available today include Sony SmartWatch, Samsung Galaxy Gear and Ge
 <section>
   <h1>Our company</h1>
   <p> Our company is based in The Netherlands, we sell the latest and best smartwatches in Europe. Our webshop is highly secured and all your information is safe with us. We offer the most elegant smart watches you can find.
-    If you need help you can contact our support  <a href="./index.php?content=contact">here</a> 
+    If you need help you can contact our support  <a href="./index.php?content=contact">here</a>
     NOTE: You need to login or register before you can order a watch.
 </section>
+ <img src="./pictures/ewatchlogo.png" alt="ewatchshop" height="300" width="100%"> 
