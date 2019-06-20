@@ -10,7 +10,7 @@ $id = isset($_SESSION['iduser']) ? $_SESSION['iduser'] : '';
 <?php
 if(isset($_SESSION["shopping_cart"])){
     $total_price = 0;
-?>	
+?>
 <table class="table">
 <tbody>
 <tr>
@@ -19,8 +19,8 @@ if(isset($_SESSION["shopping_cart"])){
 <td>QUANTITY</td>
 <td>UNIT PRICE</td>
 <td>ITEMS TOTAL</td>
-</tr>	
-<?php		
+</tr>
+<?php
 foreach ($_SESSION["shopping_cart"] as $product){
 ?>
 <tr>
@@ -45,20 +45,20 @@ $total_price += ($product["price"]*$product["quantity"]);
 </td>
 </tr>
 </tbody>
-</table>		
+</table>
   <?php
 }else{
 	echo "<h3>Your cart is empty!</h3>";
 	}
 ?>
 </div>
- 
+
 <div style="clear:both;"></div>
- 
+
 
 
 <form action="./index.php?content=bestel-script" method="post">
-<?php		
+<?php
 foreach ($_SESSION["shopping_cart"] as $product){
 ?>
 <input type="hidden" name="idproduct" value="<?php echo $product["idproduct"]; ?>">
@@ -103,3 +103,10 @@ foreach ($_SESSION["shopping_cart"] as $product){
 <?
 
 ?>
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;

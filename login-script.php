@@ -28,16 +28,10 @@
         $_SESSION["userrole"] = $record["userrole"];
         switch ($record["userrole"]) {
         case 'administrator':
-          header("Location: ./index.php?content=administrator_home");
+          header("Location: ./index.php?content=contact_admin");
           break;
         case 'customer':
-          header("Location: ./index.php?content=customer_home");
-          break;
-        case 'moderator':
-          header("Location: ./index.php?content=moderator_home");
-          break;
-        case 'root':
-          header("Location: ./index.php?content=root_home");
+          header("Location: ./index.php?content=items");
           break;
         default:
           header("Location: ./index.php?content=home");

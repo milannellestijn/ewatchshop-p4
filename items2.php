@@ -54,11 +54,11 @@ if(empty($_SESSION["shopping_cart"])) {
 <?php
 $result = mysqli_query($conn,"SELECT * FROM `product`");
 while($row = mysqli_fetch_assoc($result)){
-    
+
     echo "<div class='product_wrapper'>
-    
+
     <input type='hidden' name='idproduct' value=".$row['idproduct']." />
-    <div class='image'><img src='".$row['image']."' /></div>
+    <div class='image'><img src='".$row['image']."' height='200' width='200' /></div>
     <div class='name'>".$row['name']."</div>
     <div class='price'>$".$row['price']."</div>
 
