@@ -28,7 +28,7 @@
         $_SESSION["userrole"] = $record["userrole"];
         switch ($record["userrole"]) {
         case 'administrator':
-          header("Location: ./index.php?content=contact_admin");
+          header("Location: ./index.php?content=contactadmin");
           break;
         case 'customer':
           header("Location: ./index.php?content=items");
