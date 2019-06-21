@@ -50,12 +50,12 @@ $result = mysqli_query($conn, $sql);
 
 
                     "<td>
-                        <a href='./update.php?id=". $record["iduser"] ."'>
+                        <a href='./index.php?content=update&id=". $record["iduser"] ."'>
                         <img src='./pictures/b_edit.png' alt='edit' style='width: 20px; height: 20px;'>
                         </a>
                         </td>
                      <td>
-                        <a href='./delete.php?id=". $record["iduser"] ."'>
+                        <a href='./index.php?content=delete&id=". $record["iduser"] ."'>
                         <img src='./pictures/b_drop.png' alt='drop' style='width: 20px; height: 20px;'>
                         </a>
                         </td>
