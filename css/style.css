@@ -15,16 +15,16 @@
 	}
 .product_wrapper .buy {
 	text-transform: uppercase;
-	background: #F68B1E;
-	border: 1px solid #F68B1E;
+	background: #3A3A3A;
+	border: 1px solid #3A3A3A;
 	cursor: pointer;
 	color: #fff;
 	padding: 8px 40px;
 	margin-top: 10px;
 }
 .product_wrapper .buy:hover {
-	background: #f17e0a;
-	border-color: #f17e0a;
+	background: #3A3A3A;
+	border-color: #3A3A3A;
 }
 .message_box .box{
 	margin: 10px 0px;
@@ -48,7 +48,7 @@
 .cart_div span {
 	font-size: 12px;
 	line-height: 14px;
-	background: #F68B1E;
+	background:#F68B1E;
 	padding: 2px;
 	border: 2px solid #fff;
 	border-radius: 50%;

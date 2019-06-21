@@ -24,9 +24,7 @@
                       echo '<li class="nav-item">
                       <a class="nav-link" href="./index.php?content=orders">Bestellingen<span class="sr-only">(current)</span></a>
                     </li>';
-                    echo      '<li class="nav-item">
-                    <a class="nav-link" href="./index.php?content=info">Info<span class="sr-only">(current)</span></a>
-                  </li>';
+                   
             break;
             case 'customer':
               echo '<li class="nav-item">
