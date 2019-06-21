@@ -17,6 +17,7 @@ $name = $row['name'];
 $idproduct = $row['idproduct'];
 $price = $row['price'];
 $image = $row['image'];
+$description = $row['description'];
 
 $cartArray = array(
 	$idproduct=>array(
@@ -25,7 +26,7 @@ $cartArray = array(
 	'price'=>$price,
 	'quantity'=>1,
     'image'=>$image,
-    'description'=>$discription)
+    'description'=>$description)
 );
 
 if(empty($_SESSION["shopping_cart"])) {
