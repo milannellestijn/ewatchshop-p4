@@ -8,20 +8,22 @@
 
 include('./connect_db.php');
 $status="";
-if (isset($_POST['idproduct']) && $_POST['idproduct']!=""){
-$idproduct = $_POST['idproduct'];
-$result = mysqli_query($conn,"SELECT * FROM `product` WHERE `idproduct`='$idproduct'");
+if (isset($_POST['code']) && $_POST['code']!=""){
+$code = $_POST['code'];
+$result = mysqli_query($conn,"SELECT * FROM `product` WHERE `code`='$code'");
 
 $row = mysqli_fetch_assoc($result);
 $name = $row['name'];
+$code = $row['code'];
 $idproduct = $row['idproduct'];
 $price = $row['price'];
 $image = $row['image'];
 $description = $row['description'];
-
+ 
 $cartArray = array(
-	$idproduct=>array(
-	'name'=>$name,
+	$code=>array(
+    'name'=>$name,
+    'code'=>$code,
 	'idproduct'=>$idproduct,
 	'price'=>$price,
 	'quantity'=>1,
@@ -34,7 +36,7 @@ if(empty($_SESSION["shopping_cart"])) {
     $status = "<div class='box'>Product is added to your cart!</div>";
 }else{
     $array_keys = array_keys($_SESSION["shopping_cart"]);
-    if(in_array($idproduct,$array_keys)) {
+    if(in_array($code,$array_keys)) {
 	$status = "<div class='box' style='color:red;'>
 	Product is already added to your cart!</div>";
     } else {

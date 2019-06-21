@@ -13,7 +13,7 @@ $status="";
 if (isset($_POST['action']) && $_POST['action']=="remove"){
 if(!empty($_SESSION["shopping_cart"])) {
     foreach($_SESSION["shopping_cart"] as $key => $value) {
-      if($_POST["idproduct"] == $key){
+      if($_POST["code"] == $key){
       unset($_SESSION["shopping_cart"][$key]);
       $status = "<div class='box' style='color:red;'>
       Product is removed from your cart!</div>";
@@ -26,7 +26,7 @@ if(!empty($_SESSION["shopping_cart"])) {
  
 if (isset($_POST['action']) && $_POST['action']=="change"){
   foreach($_SESSION["shopping_cart"] as &$value){
-    if($value['idproduct'] === $_POST["idproduct"]){
+    if($value['code'] === $_POST["code"]){
         $value['quantity'] = $_POST["quantity"];
         break; // Stop the loop after we've found the product
     }
@@ -59,14 +59,14 @@ foreach ($_SESSION["shopping_cart"] as $product){
 </td>
 <td><?php echo $product["name"]; ?><br />
 <form method='post' action=''>
-<input type='hidden' name= 'idproduct' value="<?php echo $product["idproduct"]; ?>" />
+<input type='hidden' name= 'code' value="<?php echo $product["code"]; ?>" />
 <input type='hidden' name='action' value="remove" />
 <button type='submit' class='remove'>Remove Item</button>
 </form>
 </td>
 <td>
 <form method='post' action=''>
-<input type='hidden' name='idproduct' value="<?php echo $product["idproduct"]; ?>" />
+<input type='hidden' name='code' value="<?php echo $product["code"]; ?>" />
 <input type='hidden' name='action' value="change" />
 <select name='quantity' class='quantity' onChange="this.form.submit()">
 <option <?php if($product["quantity"]==1) echo "selected";?>
@@ -107,6 +107,8 @@ $total_price += ($product["price"]*$product["quantity"]);
  
 <div class="message_box" style="margin:10px 0px;">
 <?php echo $status; ?>
+
+
 </div>
 <a href="./index.php?content=bestel">
 Bestel
@@ -114,9 +116,3 @@ Bestel
 
 </div>
 
-<? 
-var_dumbp($_POST);
-echo $sql;
-
-
-?>
