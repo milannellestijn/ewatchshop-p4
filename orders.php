@@ -34,8 +34,8 @@ $result = mysqli_query($conn, $sql);
             <th scope="col">price ex</th>
             <th scope="col">price inc</th>
             <th scope="col">status</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
+            <th scope="col">Edit</th>
+            <th scope="col">Zie hele bestelling</th>
             </tr>
         </thead>
 
@@ -53,7 +53,13 @@ $result = mysqli_query($conn, $sql);
 
 
                     "<td>
-                        <a href='./orderstatus.php?id=". $record["idorder"] ."'>
+                        <a href='./index.php?content=orderstatus&id=". $record["idorder"] ."'>
+                        <img src='./pictures/b_edit.png' alt='edit' style='width: 20px; height: 20px;'>
+                        </a>
+                        </td>
+
+                        <td>
+                        <a href='./index.php?content=fullorder&id=". $record["idorder"] ."'>
                         <img src='./pictures/b_edit.png' alt='edit' style='width: 20px; height: 20px;'>
                         </a>
                         </td>

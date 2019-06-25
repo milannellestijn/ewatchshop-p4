@@ -62,12 +62,12 @@ $result = mysqli_query($conn, $sql);
 
 
                     "<td>
-                        <a href='./update_product.php?idproduct=". $record["idproduct"] ."'>
+                        <a href='./index.php?content=update_product&id=". $record["idproduct"] ."'>
                         <img src='./pictures/b_edit.png' alt='edit' style='width: 20px; height: 20px;'>
                         </a>
                         </td>
                      <td>
-                        <a href='./delete_product.php?idproduct=". $record["idproduct"] ."'>
+                        <a href='./index.php?content=delete_product&id=". $record["idproduct"] ."'>
                         <img src='./pictures/b_drop.png' alt='drop' style='width: 20px; height: 20px;'>
                         </a>
                         </td>

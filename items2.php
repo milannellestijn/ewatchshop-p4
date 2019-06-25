@@ -62,7 +62,6 @@ while($row = mysqli_fetch_assoc($result)){
     echo "<div class='product_wrapper'>
 
     <input type='hidden' name='code' value=".$row['code']." />
-    <input type='hidden' name='code' value=".$row['idproduct']." />
     <div class='image'><img src='".$row['image']."' height='200' width='200' /></div>
     <div class='name'>".$row['name']."</div>
     <div class='price'>$".$row['price']."</div>
