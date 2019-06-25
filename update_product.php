@@ -28,6 +28,7 @@ $id = sanitize($_GET["id"]);
 <input type="text" class="form-control" id="price" name="price" value="<?php echo $record["price"]; ?>" >
 <input type="text" class="form-control" id="description" name="description" value="<?php echo $record["description"]; ?>" >
 <input type="text" class="form-control" id="image" name="image" value="<?php echo $record["image"]; ?>" >
+<input type="text" class="form-control" id="stock" name="stock" value="<?php echo $record["stock"]; ?>" >
 
     <button type="submit" class="btn btn-primary">Verander</button>
 </form>

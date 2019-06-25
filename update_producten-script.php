@@ -14,19 +14,20 @@
     $description = sanitize($_POST["description"]) ;
     $price = sanitize($_POST["price"]);
     $image = sanitize($_POST["image"]);
-
+    $stock = sanitize($_POST["stock"]);
 
     $sql = "UPDATE `product` SET 
                     `name` = '$name', 
                     `code` = '$code',
                     `image` = '$image',
                     `price` = '$price',
-                    `description` = '$description'
-            WHERE `iduser` = $id";
+                    `description` = '$description',
+                    `stock` = '$stock'
+            WHERE `idproduct` = $id";
 
     mysqli_query($conn, $sql);
-    
+    echo $sql;
 
-    header("Refresh: 2; ./index.php?content=producten");
+    header("Refresh: 1; ./index.php?content=producten");
     
 ?>

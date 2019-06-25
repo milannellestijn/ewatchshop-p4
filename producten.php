@@ -32,15 +32,15 @@ $result = mysqli_query($conn, $sql);
             <table class="table table-hover">
         <thead>
             <tr>
-            <th scope="col">id</th>
-            <th scope="col">name</th>
-            <th scope="col">code</th>
-            <th scope="col">price</th>
-            <th scope="col">description</th>
-            <th scope="col">image</th>
-            <th scope="col">Stock</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
+            <th scope="col">Idproduct</th>
+            <th scope="col">Naam</th>
+            <th scope="col">Code</th>
+            <th scope="col">Prijs</th>
+            <th scope="col">Beschrijving</th>
+            <th scope="col">Afbeelding</th>
+            <th scope="col">Voorraad</th>
+            <th scope="col">Verander</th>
+            <th scope="col">Verwijder</th>
 
             </tr>
         </thead>
