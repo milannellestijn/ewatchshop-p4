@@ -7,7 +7,7 @@ $userrole = ['administrator'];
 include("./security.php");
 
 //We maken contact met de mysql-server
-include("./connect_db.php");
+
 
 // We includen de sanitize funtion om de $_POST waarden schoon te maken.
 include("./functions.php");
@@ -62,12 +62,12 @@ $result = mysqli_query($conn, $sql);
 
 
                     "<td>
-                        <a href='./update_product.php?id=". $record["idproduct"] ."'>
+                        <a href='./update_product.php?idproduct=". $record["idproduct"] ."'>
                         <img src='./pictures/b_edit.png' alt='edit' style='width: 20px; height: 20px;'>
                         </a>
                         </td>
                      <td>
-                        <a href='./delete_product.php?id=". $record["idproduct"] ."'>
+                        <a href='./delete_product.php?idproduct=". $record["idproduct"] ."'>
                         <img src='./pictures/b_drop.png' alt='drop' style='width: 20px; height: 20px;'>
                         </a>
                         </td>

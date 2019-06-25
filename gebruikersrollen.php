@@ -1,9 +1,4 @@
 <?php
-  $userrole = ['administrator'];
-  include("./security.php");
-?>
-
-<?php
 //We maken contact met de mysql-server
 include("./connect_db.php");
 
