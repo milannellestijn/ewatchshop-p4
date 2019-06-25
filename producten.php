@@ -7,7 +7,7 @@ $userrole = ['administrator'];
 include("./security.php");
 
 //We maken contact met de mysql-server
-
+include("./connect_db.php");
 
 // We includen de sanitize funtion om de $_POST waarden schoon te maken.
 include("./functions.php");
