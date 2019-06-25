@@ -30,9 +30,9 @@ $result = mysqli_query($conn, $sql);
             <tr>
             <th scope="col">id</th>
             <th scope="col">Email</th>
-            <th scope="col">Role</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
+            <th scope="col">Gebruikers Role</th>
+            <th scope="col">Verander Gebruikers Role</th>
+            <th scope="col">Verwijder</th>
 
 
             </tr>
