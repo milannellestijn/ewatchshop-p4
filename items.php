@@ -65,29 +65,32 @@ $cart_count = count(array_keys($_SESSION["shopping_cart"]));
 <?php
 }
 ?>
-
+<div class="card-group">
 <?php
 $result = mysqli_query($conn,"SELECT * FROM `product`");
 while($row = mysqli_fetch_assoc($result)){
-    echo "<div class='product_wrapper'>
+    echo "
     <form method='post' action=''>
-    <div class='card' style='width: 18rem;'>
+    
+    <div class='card  h-100' style='width: 21rem; margin-right: 1rem; margin-top: 1rem; margin-left: 1rem; '>
+    
     <input type='hidden' name='code' value=".$row['code']." />
-    <div class='image'><img src='".$row['image']."'class='card-img-top' height='200' width='200' /></div>
-    <div class='card-body'>
-    <h5 class='card-title'>".$row['name']."</h5>
-    <div class='price'>$".$row['price']."</div>
-    <p class='card-text'>".$row['description']."</p>
+    <img src='".$row['image']."'class='card-img-top' height='300' width='' />
+    <div class='card-body text-center'>
+    <h5 class='card-title '>".$row['name']."</h5>
+    <p class='card-text ' >".$row['description']."</p>
     </div>
-    <div class='card-footer'>Aantal in voorraad: ".$row['stock']."</div>
+    <div class='card-footer text-center'>
+    <p><b ><font size='6'>$".$row['price']."</font></b></p>
+    <p class='card-text'><small >Aantal in voorraad: ".$row['stock']."</small></p>
+    </div>
     <button type='submit' class='buy'>Buy Now</button>
     </div>
-    </form>
-    </div>";
+    </form>";
         }
 mysqli_close($conn);
 ?>
-
+</div>
 <div style="clear:both;"></div>
 
 <div class="message_box" style="margin:10px 0px;">

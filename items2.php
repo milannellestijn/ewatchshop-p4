@@ -19,6 +19,7 @@ $idproduct = $row['idproduct'];
 $price = $row['price'];
 $image = $row['image'];
 $description = $row['description'];
+$stock = $row['stock'];
 
 
 $cartArray = array(
@@ -29,7 +30,8 @@ $cartArray = array(
 	'price'=>$price,
 	'quantity'=>1,
     'image'=>$image,
-    'description'=>$description,)
+    'description'=>$description,
+    'stock'=>$stock)
 );
 
 if(empty($_SESSION["shopping_cart"])) {
@@ -53,36 +55,35 @@ if(empty($_SESSION["shopping_cart"])) {
 ?>
 
 
-
+<div class="card-group">
 
 <?php
-echo "<div class='card-group'>";
 $result = mysqli_query($conn,"SELECT * FROM `product`");
 while($row = mysqli_fetch_assoc($result)){
 
     echo "
-    <div class='product_wrapper'>
-    <div  class='card' style='width: 21rem;''>
+    <form method='post' action=''>
     
+    <div class='card  h-100' style='width: 21rem; margin-right: 1rem; margin-top: 1rem; margin-left: 1rem; '>
     
-
     <input type='hidden' name='code' value=".$row['code']." />
-    <div class='image'><img src='".$row['image']."' height='200' width='200' /></div>
-    <div class='card-body'>
-    <div class='name'>".$row['name']."</div>
-    
-    <div class='price'>".$row['description']."</div>
+    <img src='".$row['image']."'class='card-img-top' height='300' width='' />
+    <div class='card-body text-center'>
+    <h5 class='card-title '>".$row['name']."</h5>
+    <p class='card-text ' >".$row['description']."</p>
     </div>
-    <div class='card-footer'>
-    <div class='price'>$".$row['price']."</div>
-  </div>
-  </div>
-   </div>";
+    <div class='card-footer text-center'>
+    <p><b ><font size='6'>$".$row['price']."</font></b></p>
+    <p class='card-text'><small >Aantal in voorraad: ".$row['stock']."</small></p>
+    </div>
+    
+    </div>
+    </form>";
         }
 mysqli_close($conn);
-echo " </div>";
-?>
 
+?>
+</div>
 <div style="clear:both;"></div>
 
 <div class="message_box" style="margin:10px 0px;">

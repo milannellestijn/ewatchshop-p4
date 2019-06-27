@@ -99,6 +99,7 @@
      //           }
        // $idproduct = $row["code"];
     // de producten van de orer
+
     $sql=  "INSERT INTO `orderline` (
                 `idorderline`,
                  `idorder`,
@@ -115,7 +116,7 @@
                           ' $total_price');";
 
 mysqli_query($conn,$sql);
-//echo $sql . "<br>";
+// echo $sql . "<br>";
 }
 
   //  header("Refresh: 1; ./index.php?content=track");
