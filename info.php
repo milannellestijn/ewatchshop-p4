@@ -1,19 +1,13 @@
 
 <section>
   <h1>Smart watches - The new generation of watches</h1>
-  <p> smartwatch is a wearable computing device that closely resembles a wristwatch or other time-keeping device.
+  <p> martwatch is een draagbaar computerapparaat dat sterk lijkt op een polshorloge of een ander tijdbewakingsapparaat. Naast het vertellen van de tijd, veel smartwatches zijn Bluetooth-geschikt. Het horloge wordt in feite een draadloze Bluetooth-adapter die in staat is om de mogelijkheden van de smartphone van de drager uit te breiden naar het horloge. In een dergelijk geval kan de drager de interface van het horloge gebruiken om telefoongesprekken te initiëren en te beantwoorden vanaf zijn mobiele telefoon, e-mail en sms-berichten lezen, een weerbericht krijgen, naar muziek luisteren, e-mail of sms-berichten dicteren of een digitale assistent een vraag stellen . Andere smartwatches zijn op zichzelf staande apparaten en specifiek voor het doel, bijvoorbeeld het verzamelen van gegevens over de gezondheid van de drager of het verschaffen van GPS-mogelijkheden. Dergelijke horloges kunnen hun eigen apps hebben die in staat zijn om gegevens over de hartslag van de drager te verzamelen en bij te houden of om de drager te voorzien van wandel- of routeaanwijzingen. Smartwatches die vandaag beschikbaar zijn, zijn Sony SmartWatch, Samsung Galaxy Gear en Gear Fit, NikeFuel en Pebble Watch. Bedrijven zoals Apple en LG hebben ook gesuggereerd dat ze smartwatches in ontwikkeling hebben. Voorstanders van de ontwikkeling van smartwatch prijzen het gemak dat een smartwatch biedt, terwijl critici erop wijzen dat de meeste smartwatches groot en onhandig zijn en niet erg stijlvol of elegant.
 
-In addition to telling time, many smartwatches are Bluetooth-capable. The watch becomes, in effect, a wireless Bluetooth adaptor capable of extending the capabilities of the wearer's smartphone to the watch. In such a case, the wearer can use the watch's interface to initiate and answer phone calls from their mobile phone, read email and text messages, get a weather report, listen to music, dictate email or text messages or ask a digital assistant a question.
-
-Other smartwatches are standalone devices and purpose-specific, for instance collecting data about the wearer's health or providing GPS capabilities. Such watches may have their own apps capable of gathering and tracking data about the wearer's heart rate or providing the wearer with walking or driving directions.
-
-Smartwatches available today include Sony SmartWatch, Samsung Galaxy Gear and Gear Fit, NikeFuel and Pebble Watch. Companies such as Apple and LG have also suggested that they have smartwatches in development. Proponents of smartwatch development commend the convenience that a smartwatch offers, while critics point out that most smartwatches are large and clunky and not very stylish or elegant. </p>
+</p>
 </section>
 
 <section>
   <h1>Our company</h1>
-  <p> Our company is based in The Netherlands, we sell the latest and best smartwatches in Europe. Our webshop is highly secured and all your information is safe with us. We offer the most elegant smart watches you can find.
-    If you need help you can contact our support  <a href="./index.php?content=contact">here</a>
-    NOTE: You need to login or register before you can order a watch.
+  <p> Ons bedrijf is gevestigd in Nederland en we verkopen de nieuwste en beste smartwatches in Europa. Onze webshop is zeer beveiligd en al uw informatie is veilig bij ons. Wij bieden de meest elegante slimme horloges die u kunt vinden. Als u hulp nodig heeft, kunt u <a href="./index.php?content=contact">hier</a> contact opnemen met onze support OPMERKING: U moet inloggen of registreren voordat u een horloge kunt bestellen.
 </section>
- <img src="./pictures/ewatchlogo.png" alt="ewatchshop" height="300" width="100%"> 
+ <img src="./pictures/ewatchlogo.png" alt="ewatchshop" height="300" width="100%">
