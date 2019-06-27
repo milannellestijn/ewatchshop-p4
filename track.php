@@ -31,6 +31,7 @@ $result = mysqli_query($conn, $sql);
             <th scope="col">price ex</th>
             <th scope="col">price inc</th>
             <th scope="col">status</th>
+            <th scope="col"></th>
             </tr>
         </thead>
 
@@ -45,6 +46,12 @@ $result = mysqli_query($conn, $sql);
                      "<td>" . $record["price_inc"] . "</td>" .
                      "<td>" . $record["status"] . "</td>
                     
+                     <td>
+                     <a href='./index.php?content=fullcustomerorder&id=". $record["idorder"] ."'>
+                     <img src='./pictures/greenplus.png' alt='edit' style='width: 20px; height: 20px;'>
+                     </a>
+                     </td>
+                 
                          </tr>";
                          }
             ?>

@@ -16,6 +16,8 @@
 
   <!-- Custom styles for this template -->
   <link href="css/shop-homepage.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/footer.css" rel="stylesheet">
 
 </head>
 
@@ -34,8 +36,17 @@
       <?php include("./navigation.php"); ?>
     </section>
   </div>
+  
 </div>
 
+<br>
+<br>
+
+<br>
+<br>
+
+<br>
+<br>
 
 <div class="row">
 <div class="col-12">

@@ -13,7 +13,7 @@
     $description = sanitize($_POST["description"]) ;
     $price = sanitize($_POST["price"]);
     $image = sanitize($_POST["image"]);
-
+    $stock = sanitize($_POST["stock"]);
 
     $sql = "INSERT INTO `product` (
                     `idproduct`,
@@ -21,11 +21,13 @@
                     `code`,
                     `image`, 
                     `price` ,
-                    `description`) VALUES (NULL, '$name', '$code', '$image', '$price', '$description')";
+                    `description`,
+                    `stock`) VALUES (NULL, '$name', '$code', '$image', '$price', '$description', '$stock')";
 
     mysqli_query($conn, $sql);
-    
+    echo $sql;
+    var_dump($_POST);
 
-    header("Refresh: 1; ./index.php?content=producten");
+    header("Refresh: 100; ./index.php?content=producten");
     
 ?>

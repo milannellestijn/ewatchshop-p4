@@ -13,6 +13,8 @@
 <input type="text" class="form-control" id="description" name="description" placeholder="description"  >
 <label for="name">Images</label>
 <input type="text" class="form-control" id="image" name="image" placeholder="./pictures/x.jpg" >
+<label for="name">Stock</label>
+<input type="text" class="form-control" id="stock" name="stock" placeholder="12" >
 <button type="submit" class="btn btn-primary">Stuur op</button>
 </div>
 </form>

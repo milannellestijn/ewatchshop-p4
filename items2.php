@@ -56,23 +56,31 @@ if(empty($_SESSION["shopping_cart"])) {
 
 
 <?php
+echo "<div class='card-group'>";
 $result = mysqli_query($conn,"SELECT * FROM `product`");
 while($row = mysqli_fetch_assoc($result)){
 
-    echo "<div class='product_wrapper'>
+    echo "
+    <div class='product_wrapper'>
+    <div  class='card' style='width: 21rem;''>
+    
+    
 
     <input type='hidden' name='code' value=".$row['code']." />
     <div class='image'><img src='".$row['image']."' height='200' width='200' /></div>
+    <div class='card-body'>
     <div class='name'>".$row['name']."</div>
-    <div class='price'>$".$row['price']."</div>
+    
     <div class='price'>".$row['description']."</div>
-
-
-
-    </div>";
+    </div>
+    <div class='card-footer'>
+    <div class='price'>$".$row['price']."</div>
+  </div>
+  </div>
+   </div>";
         }
 mysqli_close($conn);
-
+echo " </div>";
 ?>
 
 <div style="clear:both;"></div>

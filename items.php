@@ -19,6 +19,7 @@ $idproduct = $row['idproduct'];
 $price = $row['price'];
 $image = $row['image'];
 $description = $row['description'];
+$stock = $row['stock'];
  
 $cartArray = array(
 	$code=>array(
@@ -28,7 +29,8 @@ $cartArray = array(
 	'price'=>$price,
 	'quantity'=>1,
     'image'=>$image,
-    'description'=>$description)
+    'description'=>$description,
+    'stock'=>$stock)
 );
 
 if(empty($_SESSION["shopping_cart"])) {
@@ -69,12 +71,17 @@ $result = mysqli_query($conn,"SELECT * FROM `product`");
 while($row = mysqli_fetch_assoc($result)){
     echo "<div class='product_wrapper'>
     <form method='post' action=''>
+    <div class='card' style='width: 18rem;'>
     <input type='hidden' name='code' value=".$row['code']." />
-    <div class='image'><img src='".$row['image']."' height='200' width='200' /></div>
-    <div class='name'>".$row['name']."</div>
+    <div class='image'><img src='".$row['image']."'class='card-img-top' height='200' width='200' /></div>
+    <div class='card-body'>
+    <h5 class='card-title'>".$row['name']."</h5>
     <div class='price'>$".$row['price']."</div>
-    <div class='price'>".$row['description']."</div>
+    <p class='card-text'>".$row['description']."</p>
+    </div>
+    <div class='card-footer'>Aantal in voorraad: ".$row['stock']."</div>
     <button type='submit' class='buy'>Buy Now</button>
+    </div>
     </form>
     </div>";
         }

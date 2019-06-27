@@ -19,7 +19,9 @@ $idorder = sanitize($_GET["id"]);
 
 
 ?>
+
 <form action="./orderstatus-script.php" method="post">
+<div class='card ' style='width: 21rem;'>
     <input type="hidden" name="idorder" value="<?=$record['idorder']?>">
 <div class="form-group">
     <label for="exampleFormControlSelect1">Userrole</label>
@@ -33,4 +35,5 @@ $idorder = sanitize($_GET["id"]);
 
 
     <button type="submit" class="btn btn-primary">Verander</button>
+    </div>
 </form>

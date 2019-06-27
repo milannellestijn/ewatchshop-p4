@@ -30,11 +30,11 @@ $result = mysqli_query($conn, $sql);
             <tr>
             <th scope="col">idorder</th>
             <th scope="col">iduser</th>
-            <th scope="col">date</th>
-            <th scope="col">price ex</th>
-            <th scope="col">price inc</th>
-            <th scope="col">status</th>
-            <th scope="col">Edit</th>
+            <th scope="col">Datum</th>
+            <th scope="col">Prijs exclusief</th>
+            <th scope="col">Prijs inclusief</th>
+            <th scope="col">Status</th>
+            <th scope="col">Verander Status</th>
             <th scope="col">Zie hele bestelling</th>
             </tr>
         </thead>
@@ -60,7 +60,7 @@ $result = mysqli_query($conn, $sql);
 
                         <td>
                         <a href='./index.php?content=fullorder&id=". $record["idorder"] ."'>
-                        <img src='./pictures/b_edit.png' alt='edit' style='width: 20px; height: 20px;'>
+                        <img src='./pictures/greenplus.png' alt='edit' style='width: 20px; height: 20px;'>
                         </a>
                         </td>
                     

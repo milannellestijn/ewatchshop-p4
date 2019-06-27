@@ -16,7 +16,7 @@
             WHERE `idorder` = $idorder";
 
     mysqli_query($conn, $sql);
-    echo $sql;
+   
 
     header("Refresh: 1; ./index.php?content=orders");
     
