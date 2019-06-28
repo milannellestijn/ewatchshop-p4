@@ -25,7 +25,7 @@
                     `stock`) VALUES (NULL, '$name', '$code', '$image', '$price', '$description', '$stock')";
 
     mysqli_query($conn, $sql);
-    echo $sql;
+   
     var_dump($_POST);
 
     header("Refresh: 100; ./index.php?content=producten");

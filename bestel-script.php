@@ -35,8 +35,8 @@
 
   }
     
-    $price_inc = $tot * 1.21;
-    $price_ex = $tot;
+    $price_ex = $tot * 0.79;
+    $price_inc = $tot;
     
    // echo $price_inc . "<br>";
 
