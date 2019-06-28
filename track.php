@@ -20,18 +20,22 @@ $result = mysqli_query($conn, $sql);
 
 ?>
     <main class="container">
+    <div class="jumbotron col-12">
+            <h1 class="display-4">Al uw bestellingen</h1>
+            <p class="lead">Druk op de groene knop om meer van de bestelling zien</p>
+        </div>
 	
     <div class="row">
      <div class="col-12">
-            <table class="table table-hover">
+            <table class="table table-hover ">
         <thead>
             <tr>
-            <th scope="col">idorder</th>
-            <th scope="col">date</th>
-            <th scope="col">price ex</th>
-            <th scope="col">price inc</th>
-            <th scope="col">status</th>
-            <th scope="col"></th>
+            <th scope="col">Idorder</th>
+            <th scope="col">Datum</th>
+            <th scope="col">Prijs Exclusief</th>
+            <th scope="col">Prijs Inclusief</th>
+            <th scope="col">Status</th>
+            <th scope="col">Zie uw hele bestelling</th>
             </tr>
         </thead>
 

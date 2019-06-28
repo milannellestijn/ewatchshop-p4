@@ -41,15 +41,17 @@ if (isset($_POST['action']) && $_POST['action']=="change"){
 if(isset($_SESSION["shopping_cart"])){
     $total_price = 0;
 ?>	
-<table class="table">
-<tbody>
+<table class="table table-bordered">
+<thead class="thead-dark">
 <tr>
-<td></td>
-<td>ITEM NAME</td>
-<td>QUANTITY</td>
-<td>UNIT PRICE</td>
-<td>ITEMS TOTAL</td>
+<th></th>
+<th scope="col">Product</th>
+<th scope="col">Hoeveelheid</th>
+<th scope="col">Prijs per unit</th>
+<th scope="col">Totaal prijs product</th>
 </tr>	
+</thead>
+  <tbody>
 <?php		
 foreach ($_SESSION["shopping_cart"] as $product){
 ?>
@@ -61,7 +63,7 @@ foreach ($_SESSION["shopping_cart"] as $product){
 <form method='post' action=''>
 <input type='hidden' name= 'code' value="<?php echo $product["code"]; ?>" />
 <input type='hidden' name='action' value="remove" />
-<button type='submit' class='remove'>Remove Item</button>
+<button type='submit button' class='btn btn-dark btn-sm'>Remove Item</button>
 </form>
 </td>
 <td>
@@ -91,14 +93,20 @@ $total_price += ($product["price"]*$product["quantity"]);
 ?>
 <tr>
 <td colspan="5" align="right">
-<strong>TOTAL: <?php echo "$".$total_price; ?></strong>
+<strong>Totaal bedrag: <?php echo "$".$total_price; ?></strong>
 </td>
 </tr>
 </tbody>
-</table>		
+</table>	
+<br>
+<br>	
+<a href="./index.php?content=bestel">
+<button type="button" class="btn btn-dark btn-lg  btn-block">Bestel</button>
+</a>
   <?php
 }else{
-	echo "<h3>Your cart is empty!</h3>";
+  echo "<h3>Your cart is empty!</h3> 
+  ";
 	}
 ?>
 </div>
@@ -107,12 +115,8 @@ $total_price += ($product["price"]*$product["quantity"]);
  
 <div class="message_box" style="margin:10px 0px;">
 <?php echo $status; ?>
-
-
 </div>
-<a href="./index.php?content=bestel">
-Bestel
-</a>
+
 
 </div>
 

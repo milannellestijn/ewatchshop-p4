@@ -75,16 +75,16 @@ while($row = mysqli_fetch_assoc($result)){
     <div class='card  h-100' style='width: 21rem; margin-right: 1rem; margin-top: 1rem; margin-left: 1rem; '>
     
     <input type='hidden' name='code' value=".$row['code']." />
-    <img src='".$row['image']."'class='card-img-top' height='300' width='' />
+    <img src='".$row['image']."'class='card-img-top' height='200' width='' />
     <div class='card-body text-center'>
-    <h5 class='card-title '>".$row['name']."</h5>
-    <p class='card-text ' >".$row['description']."</p>
+    <h5 class='card-title '><font size='5'>".$row['name']."</font></h5>
+    <p class='card-text ' ><font size='2'>".$row['description']."</font></p>
     </div>
     <div class='card-footer text-center'>
     <p><b ><font size='6'>$".$row['price']."</font></b></p>
     <p class='card-text'><small >Aantal in voorraad: ".$row['stock']."</small></p>
     </div>
-    <button type='submit' class='buy'>Buy Now</button>
+    <button type='submit' class='buy'><font size='4'>Koop Nu</font></button>
     </div>
     </form>";
         }

@@ -54,7 +54,9 @@ if(empty($_SESSION["shopping_cart"])) {
 }
 ?>
 
-
+<div class="alert alert-light text-center" role="alert">
+  U moet ingeloged zijn om te kopen.
+</div>
 <div class="card-group">
 
 <?php
@@ -64,8 +66,8 @@ while($row = mysqli_fetch_assoc($result)){
     echo "
     <form method='post' action=''>
     
+   
     <div class='card  h-100' style='width: 21rem; margin-right: 1rem; margin-top: 1rem; margin-left: 1rem; '>
-    
     <input type='hidden' name='code' value=".$row['code']." />
     <img src='".$row['image']."'class='card-img-top' height='300' width='' />
     <div class='card-body text-center'>
@@ -76,7 +78,6 @@ while($row = mysqli_fetch_assoc($result)){
     <p><b ><font size='6'>$".$row['price']."</font></b></p>
     <p class='card-text'><small >Aantal in voorraad: ".$row['stock']."</small></p>
     </div>
-    
     </div>
     </form>";
         }

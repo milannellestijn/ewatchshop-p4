@@ -24,7 +24,7 @@ $idorder = sanitize($_GET["id"]);
 <div class='card ' style='width: 21rem;'>
     <input type="hidden" name="idorder" value="<?=$record['idorder']?>">
 <div class="form-group">
-    <label for="exampleFormControlSelect1">Userrole</label>
+    <label for="exampleFormControlSelect1">Status</label>
     <select class="form-control" id="status" name="status">
     <option selected ><?php echo $record["status"]; ?></option>
     <option>onderweg</option>
@@ -34,6 +34,6 @@ $idorder = sanitize($_GET["id"]);
     </select>
 
 
-    <button type="submit" class="btn btn-primary">Verander</button>
+    <button type="submit" class="btn btn-dark  btn-lg btn-block">Verander</button>
     </div>
 </form>

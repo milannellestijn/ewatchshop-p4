@@ -60,13 +60,7 @@
 	height: 20px;
 	text-align: center;
 	}
-.cart .remove {
-	background: none;
-	border: none;
-	color: #0067ab;
-	cursor: pointer;
-	padding: 0px;
-	}
+
 .cart .remove:hover {
 	text-decoration:underline;
 	}

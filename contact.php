@@ -13,7 +13,10 @@
 
     <title>Home</title>
 
-
+    <div class="jumbotron col-12">
+            <h1 class="display-4">Contact</h1>
+            <p class="lead">Neem contact met ons op.</p>
+        </div>
 &nbsp;
 
 <form action="./insert.php" method="post">
@@ -41,7 +44,7 @@
     <label for="vraag">Uw vraag</label>
     <textarea class="form-control" name="vraag" id="vraag" rows="5" placeholder="Stel hier uw vraag" required></textarea>
   </div>
-  <button type="submit" value="Submit" class="btn btn-primary">Verstuur</button>
+  <button type="submit" value="Submit" class="btn btn-dark btn-lg btn-block">Verstuur</button>
 </form>
 &nbsp;
 <div>Onze bedrijf is gevestigd op de daltonlaan, het is makkelijk bereikbaar met de auto en met de bus.</div>

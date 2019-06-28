@@ -49,7 +49,7 @@ $id = sanitize($_GET["id"]);
     <label for="exampleFormControlTextarea1">Voorraad</label>
 <input type="text" class="form-control" id="stock" name="stock" value="<?php echo $record["stock"]; ?>" >
 </div>
-    <button type="submit" class="btn btn-primary">Verander</button>
+    <button type="submit" class="btn btn-dark  btn-lg btn-block">Verander</button>
     </div>
 </form>
 

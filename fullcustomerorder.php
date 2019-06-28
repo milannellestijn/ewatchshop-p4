@@ -35,12 +35,12 @@ $result = mysqli_query($conn, $sql);
             <table class="table table-hover">
         <thead>
             <tr>
-            <th scope="col">idorderline</th>
-            <th scope="col">idorder</th>
+            <th scope="col">Idorderline</th>
+            <th scope="col">Idorder</th>
             <th scope="col">Product</th>
-            <th scope="col">amount</th>
-            <th scope="col">price per unit</th>
-            <th scope="col">total</th>
+            <th scope="col">Hoeveelheid</th>
+            <th scope="col">Prijs per unit</th>
+            <th scope="col">Totaal</th>
             </tr>
         </thead>
 

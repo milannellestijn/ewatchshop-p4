@@ -77,7 +77,7 @@ $result = mysqli_query($conn, $sql);
         </tbody>
 </table>
 <a href="./index.php?content=product_add">
-<button  class="btn btn-primary">Maak Nieuwe</button>
+<button  class="btn btn-dark btn-lg btn-block">Maak Nieuwe</button>
 </a>
      </div>
     </div>

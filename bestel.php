@@ -11,15 +11,17 @@ $id = isset($_SESSION['iduser']) ? $_SESSION['iduser'] : '';
 if(isset($_SESSION["shopping_cart"])){
     $total_price = 0;
 ?>
-<table class="table">
-<tbody>
+<table class="table table-bordered">
+<thead class="thead-dark">
 <tr>
-<td></td>
-<td>ITEM NAME</td>
-<td>QUANTITY</td>
-<td>UNIT PRICE</td>
-<td>ITEMS TOTAL</td>
-</tr>
+<th></th>
+<th scope="col">Product</th>
+<th scope="col">Hoeveelheid</th>
+<th scope="col">Prijs per unit</th>
+<th scope="col">Totaal prijs product</th>
+</tr>	
+</thead>
+  <tbody>
 <?php
 foreach ($_SESSION["shopping_cart"] as $product){
 ?>
@@ -41,7 +43,7 @@ $total_price += ($product["price"]*$product["quantity"]);
 ?>
 <tr>
 <td colspan="5" align="right">
-<strong>TOTAL: <?php echo "$".$total_price; ?></strong>
+<strong>Totaal bedrag: <?php echo "$".$total_price; ?></strong>
 </td>
 </tr>
 </tbody>
@@ -67,38 +69,44 @@ foreach ($_SESSION["shopping_cart"] as $product){
 <?php } ?>
   <div class="form-row">
   <input type="hidden" name="iduser" value="<?= $_SESSION["id"]?>">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-5">
       <label for="inputPassword4">Voornaam</label>
-      <input type="text" class="form-control" id="firstname"  name="firstname" placeholder="Pieter">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Tussenvoegsel</label>
-      <input type="text" class="form-control" id="infix" name="infix" placeholder="van de">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Achternaam</label>
-      <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Koning">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputAddress">Phone</label>
-    <input type="text" class="form-control" id="phone" name="phone" placeholder="06123456">
-  </div>
-  <div class="form-group">
-    <label for="inputAddress2">Huisnummer</label>
-    <input type="text" class="form-control" id="address" name="address" placeholder="straat 123">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">Stad</label>
-      <input type="text" class="form-control" id="city" name="city" placeholder="Amsterdam">
+      <input type="text" class="form-control" id="firstname"  name="firstname" placeholder="Pieter" required>
     </div>
     <div class="form-group col-md-2">
-      <label for="inputZip">Postcode</label>
-      <input type="text" class="form-control" id="postalcode" name="postalcode" placeholder="1111AA">
+      <label for="inputPassword4">Tussenvoegsel</label>
+      <input type="text" class="form-control" id="infix" name="infix" placeholder="van de" required>
+    </div>
+    <div class="form-group col-md-5">
+      <label for="inputPassword4">Achternaam</label>
+      <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Koning" required>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Bestel</button>
+
+  <div class="form-row">
+  <div class="form-group">
+    <label for="inputAddress">Phone</label>
+    <input type="text" class="form-control" id="phone" name="phone" placeholder="06123456" required>
+  </div>
+</div>
+<div class="form-row">
+  <div class="form-group col-md-5">
+    <label for="inputAddress2">Aderres</label>
+    <input type="text" class="form-control" id="address" name="address" placeholder="straat 123" required>
+  </div>
+    <div class="form-group col-md-5">
+      <label for="inputCity">Stad</label>
+      <input type="text" class="form-control" id="city" name="city" placeholder="Amsterdam" required>
+    </div>
+    <div class="form-group col-md-1">
+      <label for="inputZip">Postcode</label>
+      <input type="text" class="form-control" id="postalcode" name="postalcode" placeholder="1111AA" required>
+    </div>
+</div>
+  
+  <div class="form-row">
+  <button type="submit" class="btn btn-dark">Bestel</button>
+</div>
 </form>
 <?
 
