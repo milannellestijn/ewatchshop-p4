@@ -1,6 +1,6 @@
 <?php
- // $userrole = ['administrator'];
- // include("./security.php");
+  $userrole = ['administrator'];
+  include("./security.php");
 ?>
 
 <?php

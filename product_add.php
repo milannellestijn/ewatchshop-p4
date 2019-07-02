@@ -1,7 +1,11 @@
 
+<?
+$userrole = ['administrator'];
+include("./security.php");
+?>
 
 
-<form action="./product_add-script.php" method="post">
+<form action="./index.php?content=product_add-script" method="post">
 <div class="card" style="width: 36rem;">
 
 <label for="name">Naam</label>

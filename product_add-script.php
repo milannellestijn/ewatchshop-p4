@@ -1,5 +1,6 @@
 <?php
-
+$userrole = ['administrator'];
+include("./security.php");
 
 
 
@@ -26,8 +27,7 @@
 
     mysqli_query($conn, $sql);
    
-    var_dump($_POST);
 
-    header("Refresh: 100; ./index.php?content=producten");
+    header("Refresh: 1; ./index.php?content=producten");
     
 ?>

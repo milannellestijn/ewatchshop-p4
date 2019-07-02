@@ -1,7 +1,8 @@
 <?php
 
 
-
+$userrole = ['administrator'];
+include("./security.php");
 
 
  include("./connect_db.php");
@@ -20,7 +21,7 @@ $idorder = sanitize($_GET["id"]);
 
 ?>
 
-<form action="./orderstatus-script.php" method="post">
+<form action="./index.php?content=orderstatus-script" method="post">
 <div class='card ' style='width: 21rem;'>
     <input type="hidden" name="idorder" value="<?=$record['idorder']?>">
 <div class="form-group">

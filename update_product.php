@@ -3,7 +3,8 @@
 <?php
 
 
-
+$userrole = ['administrator'];
+include("./security.php");
 
 
  include("./connect_db.php");
@@ -21,7 +22,7 @@ $id = sanitize($_GET["id"]);
 
 
 ?>
-<form action="./update_producten-script.php" method="post">
+<form action="./index.php?content=update_producten-script" method="post">
     <input type="hidden" name="id" value="<?=$record['idproduct']?>">
     <div class="row">
     <div class="form-group col-md-3">

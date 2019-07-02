@@ -1,6 +1,7 @@
 <?php
  
-
+ $userrole = ['administrator'];
+ include("./security.php");
 
 
     include("./connect_db.php");

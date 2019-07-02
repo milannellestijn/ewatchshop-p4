@@ -1,6 +1,6 @@
 <?php
- // $userrole = ['administrator'];
- // include("./security.php");
+  $userrole = ['administrator'];
+  include("./security.php");
 ?>
 
 <?php
@@ -13,14 +13,6 @@ $idorder =  sanitize($_GET["id"]);
 // Dit is een select query om de records uit de tabel te halen
 $sql = "SELECT * FROM `orderline` WHERE `idorder` = '$idorder'";
 $result = mysqli_query($conn, $sql);
-$record = mysqli_fetch_assoc($result);
-
-$idproduct = $record["idproduct"];
-$sql2 = "SELECT * FROM `product` WHERE `idproduct` = '$idproduct'";
-$result2 = mysqli_query($conn, $sql2);
-$record2 = mysqli_fetch_assoc($result2);
-
-
 
 
 
@@ -49,18 +41,19 @@ $record2 = mysqli_fetch_assoc($result2);
                         // $resultis niet leesbaar, we maken er een associatief array van
                         //var_dump($result);
                         while ($record = mysqli_fetch_assoc($result)) {
+                          $idproduct = $record["idproduct"];
+                          $sql2 = "SELECT * FROM `product` WHERE `idproduct` = '$idproduct'";
+                          $result2 = mysqli_query($conn, $sql2);
+                          $record2 = mysqli_fetch_assoc($result2);
+                          
+
                         echo "<tr><th scope = 'row'>" . $record["idorderline"] . "</th>" .
                      "<td>" . $record["idorder"] . "</td>" .
                      "<td>" . $record["idproduct"] . "</td>" .
                      "<td>" . $record2["name"] . "</td>" .
                      "<td>" . $record["amount"] . "</td>" .
                      "<td>" . $record["price"] . "</td>" .
-                     "<td>" . $record["total"] . "</td>
-
-
-                    
-                         </tr>";
-                         }
+                     "<td>" . $record["total"] . "</td> </tr>"; }
             ?>
         </tbody>
 </table>

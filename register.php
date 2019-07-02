@@ -84,9 +84,8 @@
     echo '<div class="alert alert-danger" role="alert">
             Er is iets mis gegaan met de registratie, probeer het opnieuw.
           </div>';
-    header("Refresh: 40; url=./index.php?content=registerform");
-    echo $sql;
-    var_dump($_POST);
+    header("Refresh: 4; url=./index.php?content=registerform");
+    
   }
 
 }
