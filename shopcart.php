@@ -71,16 +71,20 @@ foreach ($_SESSION["shopping_cart"] as $product){
 <input type='hidden' name='code' value="<?php echo $product["code"]; ?>" />
 <input type='hidden' name='action' value="change" />
 <select name='quantity' class='quantity' onChange="this.form.submit()">
-<option <?php if($product["quantity"]==1) echo "selected";?>
+<option selected value="<? echo $product['quantity'];?>"><?php echo $product["quantity"]; ?></option>
+<option 
 value="1">1</option>
-<option <?php if($product["quantity"]==2) echo "selected";?>
+<option 
 value="2">2</option>
-<option <?php if($product["quantity"]==3) echo "selected";?>
+<option 
 value="3">3</option>
-<option <?php if($product["quantity"]==4) echo "selected";?>
+<option 
 value="4">4</option>
-<option <?php if($product["quantity"]==5) echo "selected";?>
+<option 
 value="5">5</option>
+
+<option 
+value="6">6</option>
 </select>
 </form>
 </td>
