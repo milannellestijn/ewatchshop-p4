@@ -75,7 +75,7 @@ foreach ($_SESSION["shopping_cart"] as $product){
     </div>
     <div class="form-group col-md-2">
       <label for="inputPassword4">Tussenvoegsel</label>
-      <input type="text" class="form-control" id="infix" name="infix" placeholder="van de" required>
+      <input type="text" class="form-control" id="infix" name="infix" placeholder="van de" >
     </div>
     <div class="form-group col-md-5">
       <label for="inputPassword4">Achternaam</label>

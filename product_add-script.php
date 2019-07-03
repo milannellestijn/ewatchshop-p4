@@ -1,5 +1,6 @@
 <?php
-
+$userrole = ['administrator'];
+include("./security.php");
 
 
 
@@ -25,9 +26,8 @@
                     `stock`) VALUES (NULL, '$name', '$code', '$image', '$price', '$description', '$stock')";
 
     mysqli_query($conn, $sql);
-    echo $sql;
-    var_dump($_POST);
+   
 
-    header("Refresh: 5; ./index.php?content=producten");
-
+    header("Refresh: 1; ./index.php?content=producten");
+    
 ?>

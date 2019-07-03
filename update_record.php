@@ -1,5 +1,7 @@
 <?php
  
+ $userrole = ['administrator'];
+include("./security.php");
 
 
     include("./connect_db.php");
@@ -20,5 +22,5 @@
     mysqli_query($conn, $sql);
     
 
-    header("Refresh: 4; ./index.php?content=gebruikersrollen");
+    header("Refresh: 1; ./index.php?content=gebruikersrollen");
 ?>

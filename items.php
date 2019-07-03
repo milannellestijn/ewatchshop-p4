@@ -5,6 +5,8 @@
 
 
 <?php
+ $userrole = ['customer', 'administrator'];
+ include("./security.php");
 
 include('./connect_db.php');
 $status="";
