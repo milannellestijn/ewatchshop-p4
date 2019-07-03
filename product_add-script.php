@@ -7,7 +7,7 @@
 
     include("./functions.php");
 
-    
+
     $name = sanitize($_POST["name"]) ;
     $code = sanitize($_POST["code"]) ;
     $description = sanitize($_POST["description"]) ;
@@ -17,9 +17,9 @@
 
     $sql = "INSERT INTO `product` (
                     `idproduct`,
-                    `name`, 
+                    `name`,
                     `code`,
-                    `image`, 
+                    `image`,
                     `price` ,
                     `description`,
                     `stock`) VALUES (NULL, '$name', '$code', '$image', '$price', '$description', '$stock')";
@@ -28,6 +28,6 @@
     echo $sql;
     var_dump($_POST);
 
-    header("Refresh: 100; ./index.php?content=producten");
-    
+    header("Refresh: 5; ./index.php?content=producten");
+
 ?>
