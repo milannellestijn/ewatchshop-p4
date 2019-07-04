@@ -110,6 +110,10 @@ $total_price += ($product["price"]*$product["quantity"]);
   <?php
 }else{
   echo "<h3>Your cart is empty!</h3> 
+  
+<a href='./index.php?content=items'>
+<button type='button' class='btn btn-dark btn-lg  btn-block'>Ga Shoppen</button>
+</a>
   ";
 	}
 ?>
