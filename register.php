@@ -48,7 +48,7 @@
 
   if ($result) {
     $to = $email;
-    $subject = "Activatielink www.loginphp.com";
+    $subject = "Activatielink www.ewatchshop.com";
     $message = '<!DOCTYPE html>
                 <html>
                 <head>

@@ -15,7 +15,7 @@
       </div>
       <input type="hidden" value="<?php echo $_GET["id"]; ?>" name="id">
       <input type="hidden" value="<?php echo $_GET["pw"]; ?>" name="pw">
-      <button type="submit" class="btn btn-primary btn-lg btn-block">Sla op!</button>
+      <button type="submit" class="btn btn-dark btn-lg btn-block">Sla op!</button>
     </form>
   </div>
 </div>
